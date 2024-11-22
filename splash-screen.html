@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide-Up Animation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes slideUpAndPause {
+      0% {
+        transform: translateY(100%); /* Start from bottom */
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(0); /* Reach center */
+        opacity: 1;
+      }
+      80% {
+        transform: translateY(0); /* Stay at center */
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10%); /* Slight float above */
+        opacity: 0;
+      }
+    }
+
+    .animate-slide-up {
+      animation: slideUpAndPause 4s ease-in-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-[#FEF7F1] flex items-center justify-center h-screen">
+  <!-- Animated Image -->
+  <div>
+    <img 
+      src="assets/splash.gif" 
+      alt="Centered Image" 
+      class="w-[100%] h-[100%] object-contain animate-slide-up"
+    />
+  </div>
+
+  <script>
+    // Redirect to the homepage after the animation
+    setTimeout(() => {
+      window.location.href = "home.html"; // Change to your homepage URL
+    }, 4000); // Match the animation duration (3s)
+  </script>
+</body>
+</html>

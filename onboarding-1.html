@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hidden { display: none; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .pagination-bullet {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d1d1d1;
+            margin: 0 8px;
+            }
+        .active {
+            background-color: #ED6F2C;
+            width: 40px;
+            height: 10px;
+            border-radius: 5px; /* Adjusted to create a rectangular shape */
+            border: 2px solid #ED6F2C; /* Added border */
+            }
+    </style>
+</head>
+<body class="bg-white flex items-center justify-center h-screen">
+    <!-- Page 1 -->
+    <div id="page1" class="p-8 text-center">
+        <img src="assets/boarding-1.jpg" alt="Welcome" class="w-[90%] mb-4 mx-auto">
+        <h1 class="text-2xl font-extrabold mb-2 text-[#263D5F]">Smart And Fast</h1>
+        <p class="text-sm text-gray-700 mb-6 text-[#263D5F]">Instantly check in-check out with one easy tap</p>
+        <div class="flex flex-col items-center space-y-4">
+            <button class="text-lg bg-[#ED6F2C] w-[90%] text-white px-10 py-3 rounded-[30px] font-semibold" onclick="nextPage(2)">Next</button>
+            <button class="text-lg text-[#ED6F2C] w-[90%] px-10 py-3 font-semibold" onclick="skip()">Skip</button>
+            <!-- Pagination Below Skip -->
+            <div class="flex justify-center mt-6">
+                <div id="pagination" class="flex items-center space-x-2">
+                    <div class="pagination-bullet active" id="bullet1" onclick="goToPage(1)"></div>
+                    <div class="pagination-bullet" id="bullet2" onclick="goToPage(2)"></div>
+                    <div class="pagination-bullet" id="bullet3" onclick="goToPage(3)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" class="p-8 text-center hidden">
+        <img src="assets/boarding-2.jpg" alt="Features" class="w-[90%] mb-4 mx-auto">
+        <h1 class="text-2xl font-extrabold mb-2 text-[#263D5F]">Project Management</h1>
+        <p class="text-sm text-gray-700 mb-6 text-[#263D5F]">Efficient task and resource management</p>
+        <div class="flex flex-col items-center space-y-4">
+            <button class="text-lg bg-[#ED6F2C] w-[90%] text-white px-10 py-3 rounded-[30px] font-semibold" onclick="nextPage(3)">Next</button>
+            <button class="text-lg text-[#ED6F2C] w-[90%] px-10 py-3 font-semibold" onclick="skip()">Skip</button>
+            <!-- Pagination Below Skip -->
+            <div class="flex justify-center mt-6">
+                <div id="pagination" class="flex items-center space-x-2">
+                    <div class="pagination-bullet" id="bullet1" onclick="goToPage(1)"></div>
+                    <div class="pagination-bullet active" id="bullet2" onclick="goToPage(2)"></div>
+                    <div class="pagination-bullet" id="bullet3" onclick="goToPage(3)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div id="page3" class="p-8 text-center hidden">
+        <img src="assets/boarding-3.jpg" alt="Get Started" class="w-[90%] mb-4 mx-auto">
+        <h1 class="text-2xl font-extrabold mb-2 text-[#263D5F]">Team Work</h1>
+        <p class="text-sm text-gray-700 mb-6 text-[#263D5F]">Achieving goals together</p>
+        <div class="flex flex-col items-center space-y-4">
+            <button class="text-lg bg-[#ED6F2C] w-[90%] text-white px-10 py-3 rounded-[30px] font-semibold" onclick="skip()">Get Started</button>
+            <button class="text-lg text-[#ED6F2C] w-[90%] px-10 py-3 font-semibold" onclick="skip()">Skip</button>
+            <!-- Pagination Below Skip -->
+            <div class="flex justify-center mt-6">
+                <div id="pagination" class="flex items-center space-x-2">
+                    <div class="pagination-bullet" id="bullet1" onclick="goToPage(1)"></div>
+                    <div class="pagination-bullet" id="bullet2" onclick="goToPage(2)"></div>
+                    <div class="pagination-bullet active" id="bullet3" onclick="goToPage(3)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function nextPage(pageNumber) {
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById(`page${i}`).classList.add('hidden');
+                document.getElementById(`bullet${i}`).classList.remove('active');
+            }
+            document.getElementById(`page${pageNumber}`).classList.remove('hidden');
+            document.getElementById(`bullet${pageNumber}`).classList.add('active');
+        }
+
+        function skip() {
+            window.location.href = "homepage.html";
+        }
+
+        function goToPage(pageNumber) {
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById(`page${i}`).classList.add('hidden');
+                document.getElementById(`bullet${i}`).classList.remove('active');
+            }
+            document.getElementById(`page${pageNumber}`).classList.remove('hidden');
+            document.getElementById(`bullet${pageNumber}`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
