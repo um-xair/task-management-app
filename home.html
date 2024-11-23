@@ -15,26 +15,103 @@
 <body class="bg-white h-screen flex flex-col">
 
     <!-- Header -->
-    <header class="bg-white p-6">
-        <div class="flex items-center justify-between">
-            <!-- User Info -->
-            <div class="flex items-center">
-                <img src="assets/pfp.jpg" alt="User" class="w-16 h-16 rounded-full mr-4">
-                <div>
-                    <h2 class="text-[#263D5F] font-bold text-lg">ALYSSA UMAIRAH</h2>
-                    <p class="text-sm text-[#263D5F]">Front-end Developer</p>
+    <div class="relative">
+        <!-- Header -->
+        <header class="bg-white p-6">
+            <div class="flex items-center justify-between">
+                <!-- User Info -->
+                <div class="flex items-center">
+                    <img src="assets/pfp.jpg" alt="User" class="w-16 h-16 rounded-full mr-4">
+                    <div>
+                        <h2 class="text-[#263D5F] font-bold text-lg">ALYSSA UMAIRAH</h2>
+                        <p class="text-sm text-[#263D5F]">Front-end Developer</p>
+                    </div>
+                </div>
+                <!-- Settings Icon -->
+                <button id="settings-button" class="bg-[#ED6F2C] text-white p-2 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                        <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="mt-4 text-md text-[#263D5F] font-semibold">Welcome! Refreshing Monday.</p>
+            <p class="text-xs text-[#263D5F]">Great companies are built by great people</p>
+        </header>
+    
+        <div id="side-menu" class="fixed top-0 right-0 h-full w-[80%] bg-white shadow-md transform translate-x-full transition-transform duration-300 z-50">
+            <!-- Header -->
+            <div class="bg-[#ED6F2C] p-4 border-b">
+                <div class="flex justify-end items-center">
+                    <button id="close-menu" class="bg-white p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
+                            <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- User Profile Section -->
+                <div class="flex items-center mt-4 text-white">
+                    <img src="assets/pfp.jpg" alt="User" class="w-16 h-16 rounded-full mr-4">
+                    <div>
+                        <h2 class="font-bold text-lg">ALYSSA UMAIRAH</h2>
+                        <p class="text-sm">Front-end Developer</p>
+                    </div>
                 </div>
             </div>
-            <!-- Settings Icon -->
-            <button class="bg-[#ED6F2C] text-white p-2 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
-                    <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
-                </svg>
-            </button>
+            <!-- Menu Items -->
+            <ul class="p-4">
+                <!-- Home -->
+                <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
+                        <path d="M180-120q-25 0-42.5-17.5T120-180v-76l160-142v278H180Zm140 0v-160h320v160H320Zm360 0v-328L509-600l121-107 190 169q10 9 15 20.5t5 24.5v313q0 25-17.5 42.5T780-120H680ZM120-310v-183q0-13 5-25t15-20l300-266q8-8 18.5-11.5T480-819q11 0 21.5 3.5T520-804l80 71-480 423Z"/>
+                    </svg>
+                    <span>Home</span>
+                </li>
+                <!-- Task Management -->
+                <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
+                        <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/>
+                    </svg>
+                    <span>Task Management</span>
+                </li>
+                <!-- Settings -->
+                <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
+                        <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
+                    </svg>
+                    <span>Settings</span>
+                </li>
+                <!-- Logout -->
+                <li class="flex items-center gap-x-4 py-4 font-semibold text-red-500 cursor-pointer border-b border-[#263D5F]">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FF0000">
+                        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
+                    </svg>
+                    <span>Logout</span>
+                </li>
+            </ul>
+            
+            
         </div>
-        <p class="mt-4 text-md text-[#263D5F] font-semibold">Welcome! Refreshing Monday.</p>
-        <p class="text-xs text-[#263D5F] mb-4">Great companies are built by great people</p>
-    </header>
+        
+        
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const settingsButton = document.getElementById("settings-button");
+    const sideMenu = document.getElementById("side-menu");
+    const closeMenuButton = document.getElementById("close-menu");
+
+    settingsButton.addEventListener("click", () => {
+        sideMenu.classList.remove("translate-x-full");
+    });
+
+    closeMenuButton.addEventListener("click", () => {
+        sideMenu.classList.add("translate-x-full");
+    });
+});
+
+    </script>
+    
 
     <!-- Leaderboard Section -->
     <section class="bg-[#ED6F2C] rounded-t-[40px] mt-4 flex-grow p-6">
@@ -105,49 +182,71 @@
           
 
         <!-- Quick Actions -->
-        <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-            <button class="bg-white p-4 rounded-lg shadow flex flex-col items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#D75E26]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M5 8v11a1 1 0 001 1h12a1 1 0 001-1V8a1 1 0 00-1-1h-3V4a4 4 0 00-8 0v3H6a1 1 0 00-1 1zm5-3a2 2 0 114 0v3h-4V5zm10 5v8h-2v-8h2zm-14 0h2v8H6v-8z"/>
+        <div class="grid grid-cols-3 gap-4 mt-6 text-center mb-24">
+            <button class="bg-white p-4 rounded-[20px] shadow flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#ED6F2C">
+                    <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/>
                 </svg>
-                <p class="mt-2 text-sm text-[#263D5F]">Manage Task</p>
+                <p class="mt-2 text-sm text-[#263D5F]">Task</p>
             </button>
-            <button class="bg-white p-4 rounded-lg shadow flex flex-col items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#D75E26]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 1a9 9 0 10.002 18.002A9 9 0 0012 1zM3 12H1c0-1.85.528-3.569 1.441-5.02L4.02 8.44A7.996 7.996 0 003 12zm1.441 7.02l1.58-1.581A7.968 7.968 0 003 12h2a5.978 5.978 0 011.44 3.02zM15 11v2H9v-2h6z"/>
+            <button class="bg-white p-4 rounded-[20px] shadow flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#ED6F2C">
+                    <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240v80H200v560h560v-240h80v240q0 33-23.5 56.5T760-120H200Zm440-400v-120H520v-80h120v-120h80v120h120v80H720v120h-80Z"/>
                 </svg>
-                <p class="mt-2 text-sm text-[#263D5F]">KPI</p>
+                <p class="mt-2 text-sm text-[#263D5F]">PK Corner</p>
             </button>
-            <button class="bg-white p-4 rounded-lg shadow flex flex-col items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#D75E26]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 17.27l5.18 3.73-1.64-5.56L20 10.5l-5.64-.04L12 5l-2.36 5.46L4 10.5l4.46 4.94L6.82 21z"/>
+            <button class="bg-white p-4 rounded-[20px] shadow flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#ED6F2C">
+                    <path d="M360-120q-66 0-113-47t-47-113v-327q-35-13-57.5-43.5T120-720q0-50 35-85t85-35q50 0 85 35t35 85q0 39-22.5 69.5T280-607v327q0 33 23.5 56.5T360-200q33 0 56.5-23.5T440-280v-400q0-66 47-113t113-47q66 0 113 47t47 113v327q35 13 57.5 43.5T840-240q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-39 22.5-70t57.5-43v-327q0-33-23.5-56.5T600-760q-33 0-56.5 23.5T520-680v400q0 66-47 113t-113 47ZM240-680q17 0 28.5-11.5T280-720q0-17-11.5-28.5T240-760q-17 0-28.5 11.5T200-720q0 17 11.5 28.5T240-680Zm480 480q17 0 28.5-11.5T760-240q0-17-11.5-28.5T720-280q-17 0-28.5 11.5T680-240q0 17 11.5 28.5T720-200ZM240-720Zm480 480Z"/>
                 </svg>
-                <p class="mt-2 text-sm text-[#263D5F]">Points</p>
+                <p class="mt-2 text-sm text-[#263D5F]">Roadmap</p>
             </button>
         </div>
     </section>
 
     <!-- Bottom Navigation -->
-    <nav class="bg-white py-3 flex justify-around shadow-t-md">
+    <nav class="bg-white py-3 flex justify-around items-center shadow-t-md fixed bottom-0 w-full border-t">
+        <!-- Tasks -->
+        <button class="text-[#263D5F] flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
+                <path d="m438-240 226-226-58-58-169 169-84-84-57 57 142 142ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
+            </svg>
+            <span class="text-xs mt-2">Tasks</span>
+        </button>
+    
+        <!-- Points -->
+        <button class="text-[#263D5F] flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
+                <path d="M280-880h400v314q0 23-10 41t-28 29l-142 84 28 92h152l-124 88 48 152-124-94-124 94 48-152-124-88h152l28-92-142-84q-18-11-28-29t-10-41v-314Zm80 80v234l80 48v-282h-80Zm240 0h-80v282l80-48v-234ZM480-647Zm-40-12Zm80 0Z"/>
+            </svg>
+            <span class="text-xs mt-2">Badges</span>
+        </button>
+    
+        <!-- Home -->
         <button class="text-[#D75E26] flex flex-col items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
+                <path d="M180-120q-25 0-42.5-17.5T120-180v-76l160-142v278H180Zm140 0v-160h320v160H320Zm360 0v-328L509-600l121-107 190 169q10 9 15 20.5t5 24.5v313q0 25-17.5 42.5T780-120H680ZM120-310v-183q0-13 5-25t15-20l300-266q8-8 18.5-11.5T480-819q11 0 21.5 3.5T520-804l80 71-480 423Z"/>
             </svg>
-            <span class="text-xs">Home</span>
+            <span class="text-xs mt-2">Home</span>
         </button>
+    
+        <!-- Settings -->
         <button class="text-[#263D5F] flex flex-col items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19.07 4.93a1 1 0 00-1.41 0L12 10.59l-1.18-1.18a1 1 0 10-1.41 1.41L12 13.41l7.07-7.07a1 1 0 000-1.41z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
+                <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
             </svg>
-            <span class="text-xs">Tasks</span>
+            <span class="text-xs mt-2">Settings</span>
         </button>
+    
+        <!-- Profile -->
         <button class="text-[#263D5F] flex flex-col items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17 11h3l-4-5-4 5h3v7H7v-7h3l-4-5-4 5h3v8h10v-8z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
+                <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/>
             </svg>
-            <span class="text-xs">Settings</span>
+            <span class="text-xs mt-2">Profile</span>
         </button>
     </nav>
+    
 
 </body>
 </html>
