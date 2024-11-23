@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white p-6">
+        <div class="flex items-center justify-between">
+            <!-- User Info -->
+            <div class="flex items-center">
+                <img src="assets/pfp.jpg" alt="User" class="w-16 h-16 rounded-full mr-4">
+                <div>
+                    <h2 class="text-[#263D5F] font-bold text-lg">ALYSSA UMAIRAH</h2>
+                    <p class="text-sm text-[#263D5F]">Front-end Developer</p>
+                </div>
+            </div>
+            <!-- Settings Icon -->
+            <button class="bg-[#ED6F2C] text-white p-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                    <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
+                </svg>
+            </button>
+        </div>
+        <p class="mt-4 text-md text-[#263D5F] font-semibold">Welcome! Refreshing Monday.</p>
+        <p class="text-xs text-[#263D5F] mb-4">Great companies are built by great people</p>
+    </header>
+
+    <!-- Leaderboard Section -->
+    <section class="bg-[#ED6F2C] rounded-t-[40px] mt-4 flex-grow p-6">
+        <div>
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="mt-2 text-white text-lg font-semibold">Baby Fair's Leaderboard</h3>
+                <button class="text-white text-sm hover:underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
+                </button>
+            </div>
+            <!-- Leaderboard Avatars -->
+            <div class="flex space-x-4">
+                <div class="relative text-center">
+                    <img src="assets/pfp-1.jpg" alt="User 1" class="w-20 h-auto rounded-full">
+                    <p class="absolute -top-2 left-0 bg-[#263D5F] text-white text-xs font-semibold w-8 h-8 flex items-center justify-center rounded-full">1</p>
+
+                </div>
+                <div class="relative text-center">
+                    <img src="assets/pfp-2.jpg" alt="User 2" class="w-20 h-auto rounded-full">
+                    <p class="absolute -top-2 left-0 bg-[#263D5F] text-white text-xs font-semibold w-8 h-8 flex items-center justify-center rounded-full">2</p>
+                </div>
+                <div class="relative text-center">
+                    <img src="assets/pfp-3.jpg" alt="User 3" class="w-20 h-auto rounded-full">
+                    <p class="absolute -top-2 left-0 bg-[#263D5F] text-white text-xs font-semibold w-8 h-8 flex items-center justify-center rounded-full">3</p>
+                </div>
+                <div class="relative text-center">
+                    <img src="assets/pfp-1.jpg" alt="User 4" class="w-20 h-auto rounded-full">
+                    <p class="absolute -top-2 left-0 bg-[#263D5F] text-white text-xs font-semibold w-8 h-8 flex items-center justify-center rounded-full">4</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Today's Overview -->
+        <div class="mt-8 w-full max-w-md mx-auto">
+            <!-- Section Title -->
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="mt-2 text-white text-lg font-semibold">Today's Overview</h3>
+                <p class="text-sm text-white mr-2">7 November, 2024</p>
+              </div>
+          
+            <!-- Clock-In and Clock-Out in 2 Columns -->
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Clock-In Card -->
+              <div class="bg-white p-6 rounded-[20px] text-center">
+                <div class="flex items-center justify-center mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
+                        <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/>
+                    </svg>
+                  <p class="text-md text-[#263D5F] ml-2">Clock In</p>
+                </div>
+                <p class="text-2xl font-bold text-[#263D5F]">9:00 AM</p>
+              </div>
+          
+              <!-- Clock-Out Card -->
+              <div class="bg-white p-6 rounded-[20px] text-center">
+                <div class="flex items-center justify-center mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
+                        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
+                    </svg>
+                  <p class="text-md text-[#263D5F] ml-2">Clock Out</p>
+                </div>
+                <p class="text-2xl font-bold text-[#263D5F]">6:00 PM</p>
+              </div>
+            </div>
+        </div>
+          
+          
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+            <button class="bg-white p-4 rounded-lg shadow flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#D75E26]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M5 8v11a1 1 0 001 1h12a1 1 0 001-1V8a1 1 0 00-1-1h-3V4a4 4 0 00-8 0v3H6a1 1 0 00-1 1zm5-3a2 2 0 114 0v3h-4V5zm10 5v8h-2v-8h2zm-14 0h2v8H6v-8z"/>
+                </svg>
+                <p class="mt-2 text-sm text-[#263D5F]">Manage Task</p>
+            </button>
+            <button class="bg-white p-4 rounded-lg shadow flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#D75E26]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 1a9 9 0 10.002 18.002A9 9 0 0012 1zM3 12H1c0-1.85.528-3.569 1.441-5.02L4.02 8.44A7.996 7.996 0 003 12zm1.441 7.02l1.58-1.581A7.968 7.968 0 003 12h2a5.978 5.978 0 011.44 3.02zM15 11v2H9v-2h6z"/>
+                </svg>
+                <p class="mt-2 text-sm text-[#263D5F]">KPI</p>
+            </button>
+            <button class="bg-white p-4 rounded-lg shadow flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#D75E26]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 17.27l5.18 3.73-1.64-5.56L20 10.5l-5.64-.04L12 5l-2.36 5.46L4 10.5l4.46 4.94L6.82 21z"/>
+                </svg>
+                <p class="mt-2 text-sm text-[#263D5F]">Points</p>
+            </button>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bg-white py-3 flex justify-around shadow-t-md">
+        <button class="text-[#D75E26] flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <span class="text-xs">Home</span>
+        </button>
+        <button class="text-[#263D5F] flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.07 4.93a1 1 0 00-1.41 0L12 10.59l-1.18-1.18a1 1 0 10-1.41 1.41L12 13.41l7.07-7.07a1 1 0 000-1.41z"/>
+            </svg>
+            <span class="text-xs">Tasks</span>
+        </button>
+        <button class="text-[#263D5F] flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17 11h3l-4-5-4 5h3v7H7v-7h3l-4-5-4 5h3v8h10v-8z"/>
+            </svg>
+            <span class="text-xs">Settings</span>
+        </button>
+    </nav>
+
+</body>
+</html>
