@@ -10,7 +10,7 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
-        /* Slide up animation */
+
         @keyframes slideUp {
             0% {
                 transform: translateY(1000px);
@@ -20,21 +20,44 @@
             }
         }
         .slide-up {
-            animation: slideUp 0.5s ease-out forwards;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s forwards;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.8s forwards;
         }
     </style>
 </head>
-<body class="bg-[#ED6F2C] h-screen flex justify-center items-center">
+<body class="bg-[#ED6F2C] h-screen flex justify-center items-end relative">
 
-    <div id="formContainer" class="bg-white w-full max-w-sm p-8 mt-20 rounded-tl-[50px] rounded-tr-[50px] opacity-0">
-        <!-- Header -->
-        <h1 class="text-2xl font-bold text-[#263D5F] mt-10 text-center">Welcome aboard!</h1>
-        <p class="text-sm text-[#263D5F] mb-10 text-center">Log in to your account</p>
+    <div id="formContainer" class="bg-white w-full max-w-sm p-8 rounded-tl-[50px] rounded-tr-[50px] opacity-0 h-[85%]">
+        <h1 class="text-3xl font-bold text-[#263D5F] mt-4 text-center">Welcome aboard!</h1>
+        <p class="text-sm text-[#263D5F] mb-6 text-center">Log in to your account</p>
 
-        <!-- Form -->
-        <form action="#" method="POST">
-            <!-- Email input -->
-            <div class="mb-4">
+        <form id="loginForm">
+            <div class="mb-4 mt-10">
                 <label for="email" class="block text-[#263D5F] font-semibold mb-2 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F" class="mr-2">
                         <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/>
@@ -44,7 +67,6 @@
                 <input type="email" id="email" name="email" placeholder="email@mail.com" class="w-full p-3 border border-[#263D5F] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ED6F2C]" required>
             </div>
 
-            <!-- Password input -->
             <div class="mb-4">
                 <label for="password" class="block text-[#263D5F] font-semibold mb-2 flex items-center"> 
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F" class="mr-2"> 
@@ -55,7 +77,6 @@
                 <div class="relative">
                     <input type="password" id="password" name="password" placeholder="password" class="w-full p-3 border border-[#263D5F] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ED6F2C]" required>
                     <span class="absolute right-3 top-3 text-[#263D5F] cursor-pointer" id="togglePassword" onclick="togglePasswordVisibility()">
-                        <!-- Eye icon (password hidden initially) -->
                         <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
                             <path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/>
                         </svg>
@@ -63,40 +84,50 @@
                 </div>
             </div>
 
-            <!-- Remember Me -->
-            <div class="flex items-center mb-20">
+            <div class="flex items-center mb-6">
                 <input type="checkbox" id="remember" name="remember" class="w-4 h-4 text-[#ED6F2C] focus:ring-2 focus:ring-[#ED6F2C]">
                 <label for="remember" class="text-[#263D5F] ml-2">Remember Me</label>
             </div>
 
-            <!-- Login Button -->
-            <button type="submit" class="w-full bg-[#ED6F2C] text-white py-3 rounded-full text-lg font-semibold mb-4">LOGIN</button>
-
-            <!-- Forgot Password Link -->
-            <div class="text-center">
+            <button type="button" id="loginButton" class="w-full bg-[#ED6F2C] text-white py-3 rounded-full text-lg font-semibold mt-20">LOGIN</button>
+            <div class="mt-4 text-center">
                 <a href="#" class="text-[#263D5F] text-sm hover:underline">Forgot Password?</a>
             </div>
         </form>
     </div>
 
+    <div id="splashScreen" class="absolute inset-0 bg-white flex flex-col items-center justify-center text-center hidden opacity-0">
+        <div>
+            <img src="assets/msg-success-1.jpg" alt="Success" class="w-48 h-48 mx-auto">
+            <h1 class="text-3xl font-bold text-[#263D5F] mt-10">Success!</h1>
+            <p class="text-lsm text-[#263D5F] mb-10">You've logged in</p>
+        </div>
+    </div>
+
     <script>
-        // Function to toggle password visibility
         function togglePasswordVisibility() {
             const passwordInput = document.getElementById('password');
-            const eyeIcon = document.getElementById('eyeIcon');
-
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                eyeIcon.setAttribute("fill", "#263D5F");
-                eyeIcon.innerHTML = `<path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Z"/>`;
-            } else {
-                passwordInput.type = 'password';
-                eyeIcon.setAttribute("fill", "#263D5F");
-                eyeIcon.innerHTML = `<path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/>`;
-            }
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
         }
 
-        // Trigger the slide-up animation when the page loads
+        document.getElementById('loginButton').addEventListener('click', () => {
+            const formContainer = document.getElementById('formContainer');
+            const splashScreen = document.getElementById('splashScreen');
+
+            formContainer.classList.add('hidden');
+            splashScreen.classList.remove('hidden', 'opacity-0');
+            splashScreen.classList.add('fade-in');
+
+            setTimeout(() => {
+                splashScreen.classList.remove('fade-in');
+                splashScreen.classList.add('fade-out');
+            }, 1500);
+
+            setTimeout(() => {
+                window.location.href = 'home.html';
+            }, 3000);
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('formContainer').classList.add('opacity-100', 'slide-up');
         });

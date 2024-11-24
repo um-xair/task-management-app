@@ -23,13 +23,12 @@
             background-color: #ED6F2C;
             width: 40px;
             height: 10px;
-            border-radius: 5px; /* Adjusted to create a rectangular shape */
-            border: 2px solid #ED6F2C; /* Added border */
+            border-radius: 5px; 
+            border: 2px solid #ED6F2C;
             }
     </style>
 </head>
 <body class="bg-white flex items-center justify-center h-screen">
-    <!-- Page 1 -->
     <div id="page1" class="p-8 text-center">
         <img src="assets/boarding-1.jpg" alt="Welcome" class="w-[90%] mb-4 mx-auto">
         <h1 class="text-2xl font-extrabold mb-2 text-[#263D5F]">Smart And Fast</h1>
@@ -37,7 +36,6 @@
         <div class="flex flex-col items-center space-y-4">
             <button class="text-lg bg-[#ED6F2C] w-[90%] text-white px-10 py-3 rounded-[30px] font-semibold" onclick="nextPage(2)">Next</button>
             <button class="text-lg text-[#ED6F2C] w-[90%] px-10 py-3 font-semibold" onclick="skip()">Skip</button>
-            <!-- Pagination Below Skip -->
             <div class="flex justify-center mt-6">
                 <div id="pagination" class="flex items-center space-x-2">
                     <div class="pagination-bullet active" id="bullet1" onclick="goToPage(1)"></div>
@@ -48,7 +46,6 @@
         </div>
     </div>
 
-    <!-- Page 2 -->
     <div id="page2" class="p-8 text-center hidden">
         <img src="assets/boarding-2.jpg" alt="Features" class="w-[90%] mb-4 mx-auto">
         <h1 class="text-2xl font-extrabold mb-2 text-[#263D5F]">Project Management</h1>
@@ -56,7 +53,6 @@
         <div class="flex flex-col items-center space-y-4">
             <button class="text-lg bg-[#ED6F2C] w-[90%] text-white px-10 py-3 rounded-[30px] font-semibold" onclick="nextPage(3)">Next</button>
             <button class="text-lg text-[#ED6F2C] w-[90%] px-10 py-3 font-semibold" onclick="skip()">Skip</button>
-            <!-- Pagination Below Skip -->
             <div class="flex justify-center mt-6">
                 <div id="pagination" class="flex items-center space-x-2">
                     <div class="pagination-bullet" id="bullet1" onclick="goToPage(1)"></div>
@@ -67,7 +63,6 @@
         </div>
     </div>
 
-    <!-- Page 3 -->
     <div id="page3" class="p-8 text-center hidden">
         <img src="assets/boarding-3.jpg" alt="Get Started" class="w-[90%] mb-4 mx-auto">
         <h1 class="text-2xl font-extrabold mb-2 text-[#263D5F]">Team Work</h1>
@@ -75,7 +70,6 @@
         <div class="flex flex-col items-center space-y-4">
             <button class="text-lg bg-[#ED6F2C] w-[90%] text-white px-10 py-3 rounded-[30px] font-semibold" onclick="skip()">Get Started</button>
             <button class="text-lg text-[#ED6F2C] w-[90%] px-10 py-3 font-semibold" onclick="skip()">Skip</button>
-            <!-- Pagination Below Skip -->
             <div class="flex justify-center mt-6">
                 <div id="pagination" class="flex items-center space-x-2">
                     <div class="pagination-bullet" id="bullet1" onclick="goToPage(1)"></div>
@@ -97,7 +91,7 @@
         }
 
         function skip() {
-            window.location.href = "homepage.html";
+            window.location.href = "accept-term.html";
         }
 
         function goToPage(pageNumber) {

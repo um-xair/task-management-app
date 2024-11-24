@@ -23,18 +23,27 @@
             padding-bottom: 20px;
             text-align: center;
         }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-[#ED6F2C] flex flex-col justify-center items-center h-screen p-4">
 
-    <!-- Image in the center -->
-    <div class="mb-6">
+    <div class="mb-6 fade-in">
         <img src="assets/explore.png" alt="Image" class="w-[90%] sm:w-[400px] h-auto mx-auto">
     </div>
 
-    <!-- Checkbox and Button at the Bottom -->
-    <div class="footer mb-6 w-[80%]">
-        <!-- Checkbox and Terms/Privacy Text -->
+    <div class="footer mb-6 w-[80%] fade-in">
         <div class="flex flex-col items-center text-sm text-white mb-6 text-justify">
             <div class="flex items-center space-x-2">
                 <input type="checkbox" id="termsCheckbox" class="form-checkbox h-8 w-8 text-[#ED6F2C]" onclick="toggleButton()">
@@ -45,17 +54,18 @@
                 </label>
             </div>
         </div>
-
-        <!-- Accept and Continue Button -->
-        <button id="acceptButton" class="text-[#ED6F2C] bg-white px-10 py-3 rounded-[30px] text-lg font-semibold w-[90%] sm:w-auto disabled:opacity-50" disabled onclick="acceptTerms()">Accept and Continue</button>
+        <button id="acceptButton" class="mb-10 text-[#ED6F2C] bg-white px-10 py-3 rounded-[30px] text-lg font-semibold w-full disabled:opacity-50" disabled onclick="acceptTerms()">Accept and Continue</button>
     </div>
 
     <script>
-        // Function to toggle the accept button based on checkbox state
         function toggleButton() {
             const checkbox = document.getElementById('termsCheckbox');
             const button = document.getElementById('acceptButton');
-            button.disabled = !checkbox.checked; // Enable the button only if checkbox is checked
+            button.disabled = !checkbox.checked;
+        }
+        
+        function acceptTerms() {
+            window.location.href = "welcome.html"; 
         }
     </script>
 </body>

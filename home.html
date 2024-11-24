@@ -10,16 +10,24 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+        @keyframes slideUp {
+            0% {
+                transform: translateY(1000px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+        }
     </style>
 </head>
 <body class="bg-white h-screen flex flex-col">
 
-    <!-- Header -->
     <div class="relative">
-        <!-- Header -->
         <header class="bg-white p-6">
             <div class="flex items-center justify-between">
-                <!-- User Info -->
                 <div class="flex items-center">
                     <img src="assets/pfp.jpg" alt="User" class="w-16 h-16 rounded-full mr-4">
                     <div>
@@ -27,7 +35,6 @@
                         <p class="text-sm text-[#263D5F]">Front-end Developer</p>
                     </div>
                 </div>
-                <!-- Settings Icon -->
                 <button id="settings-button" class="bg-[#ED6F2C] text-white p-2 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
                         <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
@@ -38,8 +45,9 @@
             <p class="text-xs text-[#263D5F]">Great companies are built by great people</p>
         </header>
     
+        <div id="backdrop" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+    
         <div id="side-menu" class="fixed top-0 right-0 h-full w-[80%] bg-white shadow-md transform translate-x-full transition-transform duration-300 z-50">
-            <!-- Header -->
             <div class="bg-[#ED6F2C] p-4 border-b">
                 <div class="flex justify-end items-center">
                     <button id="close-menu" class="bg-white p-2 rounded-full">
@@ -48,7 +56,6 @@
                         </svg>
                     </button>
                 </div>
-                <!-- User Profile Section -->
                 <div class="flex items-center mt-4 text-white">
                     <img src="assets/pfp.jpg" alt="User" class="w-16 h-16 rounded-full mr-4">
                     <div>
@@ -57,30 +64,26 @@
                     </div>
                 </div>
             </div>
-            <!-- Menu Items -->
+
             <ul class="p-4">
-                <!-- Home -->
                 <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
                         <path d="M180-120q-25 0-42.5-17.5T120-180v-76l160-142v278H180Zm140 0v-160h320v160H320Zm360 0v-328L509-600l121-107 190 169q10 9 15 20.5t5 24.5v313q0 25-17.5 42.5T780-120H680ZM120-310v-183q0-13 5-25t15-20l300-266q8-8 18.5-11.5T480-819q11 0 21.5 3.5T520-804l80 71-480 423Z"/>
                     </svg>
                     <span>Home</span>
                 </li>
-                <!-- Task Management -->
                 <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
                         <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/>
                     </svg>
                     <span>Task Management</span>
                 </li>
-                <!-- Settings -->
                 <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
                         <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
                     </svg>
                     <span>Settings</span>
                 </li>
-                <!-- Logout -->
                 <li class="flex items-center gap-x-4 py-4 font-semibold text-red-500 cursor-pointer border-b border-[#263D5F]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FF0000">
                         <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
@@ -88,33 +91,38 @@
                     <span>Logout</span>
                 </li>
             </ul>
-            
-            
         </div>
-        
-        
     </div>
-
+    
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-    const settingsButton = document.getElementById("settings-button");
-    const sideMenu = document.getElementById("side-menu");
-    const closeMenuButton = document.getElementById("close-menu");
-
-    settingsButton.addEventListener("click", () => {
-        sideMenu.classList.remove("translate-x-full");
-    });
-
-    closeMenuButton.addEventListener("click", () => {
-        sideMenu.classList.add("translate-x-full");
-    });
-});
-
+            const settingsButton = document.getElementById("settings-button");
+            const sideMenu = document.getElementById("side-menu");
+            const closeMenuButton = document.getElementById("close-menu");
+            const backdrop = document.getElementById("backdrop");
+    
+            settingsButton.addEventListener("click", () => {
+                sideMenu.classList.remove("translate-x-full");
+                backdrop.classList.remove("opacity-0", "pointer-events-none");
+                backdrop.classList.add("opacity-50");
+            });
+    
+            closeMenuButton.addEventListener("click", () => {
+                sideMenu.classList.add("translate-x-full");
+                backdrop.classList.add("opacity-0", "pointer-events-none");
+                backdrop.classList.remove("opacity-50");
+            });
+    
+            backdrop.addEventListener("click", () => {
+                sideMenu.classList.add("translate-x-full");
+                backdrop.classList.add("opacity-0", "pointer-events-none");
+                backdrop.classList.remove("opacity-50");
+            });
+        });
     </script>
     
-
-    <!-- Leaderboard Section -->
-    <section class="bg-[#ED6F2C] rounded-t-[40px] mt-4 flex-grow p-6">
+    
+    <section class="bg-[#ED6F2C] rounded-t-[40px] mt-4 flex-grow p-6 slide-up">
         <div>
             <div class="flex justify-between items-center mb-4">
                 <h3 class="mt-2 text-white text-lg font-semibold">Baby Fair's Leaderboard</h3>
@@ -122,12 +130,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
                 </button>
             </div>
-            <!-- Leaderboard Avatars -->
             <div class="flex space-x-4">
                 <div class="relative text-center">
                     <img src="assets/pfp-1.jpg" alt="User 1" class="w-20 h-auto rounded-full">
                     <p class="absolute -top-2 left-0 bg-[#263D5F] text-white text-xs font-semibold w-8 h-8 flex items-center justify-center rounded-full">1</p>
-
                 </div>
                 <div class="relative text-center">
                     <img src="assets/pfp-2.jpg" alt="User 2" class="w-20 h-auto rounded-full">
@@ -142,46 +148,36 @@
                     <p class="absolute -top-2 left-0 bg-[#263D5F] text-white text-xs font-semibold w-8 h-8 flex items-center justify-center rounded-full">4</p>
                 </div>
             </div>
-            
         </div>
 
-        <!-- Today's Overview -->
         <div class="mt-8 w-full max-w-md mx-auto">
-            <!-- Section Title -->
             <div class="flex justify-between items-center mb-4">
                 <h3 class="mt-2 text-white text-lg font-semibold">Today's Overview</h3>
                 <p class="text-sm text-white mr-2">7 November, 2024</p>
-              </div>
-          
-            <!-- Clock-In and Clock-Out in 2 Columns -->
+            </div>
             <div class="grid grid-cols-2 gap-4">
-              <!-- Clock-In Card -->
-              <div class="bg-white p-6 rounded-[20px] text-center">
-                <div class="flex items-center justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
-                        <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/>
-                    </svg>
-                  <p class="text-md text-[#263D5F] ml-2">Clock In</p>
+                <div class="bg-white p-6 rounded-[20px] text-center">
+                    <div class="flex items-center justify-center mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
+                            <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/>
+                        </svg>
+                        <p class="text-md text-[#263D5F] ml-2">Clock In</p>
+                    </div>
+                    <p class="text-2xl font-bold text-[#263D5F]">9:00 AM</p>
                 </div>
-                <p class="text-2xl font-bold text-[#263D5F]">9:00 AM</p>
-              </div>
           
-              <!-- Clock-Out Card -->
-              <div class="bg-white p-6 rounded-[20px] text-center">
-                <div class="flex items-center justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
-                        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
-                    </svg>
-                  <p class="text-md text-[#263D5F] ml-2">Clock Out</p>
+                <div class="bg-white p-6 rounded-[20px] text-center">
+                    <div class="flex items-center justify-center mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
+                            <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
+                        </svg>
+                        <p class="text-md text-[#263D5F] ml-2">Clock Out</p>
+                    </div>
+                    <p class="text-2xl font-bold text-[#263D5F]">6:00 PM</p>
                 </div>
-                <p class="text-2xl font-bold text-[#263D5F]">6:00 PM</p>
-              </div>
             </div>
         </div>
           
-          
-
-        <!-- Quick Actions -->
         <div class="grid grid-cols-3 gap-4 mt-6 text-center mb-24">
             <button class="bg-white p-4 rounded-[20px] shadow flex flex-col items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#ED6F2C">
@@ -204,9 +200,7 @@
         </div>
     </section>
 
-    <!-- Bottom Navigation -->
-    <nav class="bg-white py-3 flex justify-around items-center shadow-t-md fixed bottom-0 w-full border-t">
-        <!-- Tasks -->
+    <nav class="bg-white py-3 flex justify-around items-center shadow-t-md fixed bottom-0 w-full h-[12%]">
         <button class="text-[#263D5F] flex flex-col items-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
                 <path d="m438-240 226-226-58-58-169 169-84-84-57 57 142 142ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
@@ -214,7 +208,6 @@
             <span class="text-xs mt-2">Tasks</span>
         </button>
     
-        <!-- Points -->
         <button class="text-[#263D5F] flex flex-col items-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
                 <path d="M280-880h400v314q0 23-10 41t-28 29l-142 84 28 92h152l-124 88 48 152-124-94-124 94 48-152-124-88h152l28-92-142-84q-18-11-28-29t-10-41v-314Zm80 80v234l80 48v-282h-80Zm240 0h-80v282l80-48v-234ZM480-647Zm-40-12Zm80 0Z"/>
@@ -222,7 +215,6 @@
             <span class="text-xs mt-2">Badges</span>
         </button>
     
-        <!-- Home -->
         <button class="text-[#D75E26] flex flex-col items-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
                 <path d="M180-120q-25 0-42.5-17.5T120-180v-76l160-142v278H180Zm140 0v-160h320v160H320Zm360 0v-328L509-600l121-107 190 169q10 9 15 20.5t5 24.5v313q0 25-17.5 42.5T780-120H680ZM120-310v-183q0-13 5-25t15-20l300-266q8-8 18.5-11.5T480-819q11 0 21.5 3.5T520-804l80 71-480 423Z"/>
@@ -230,7 +222,6 @@
             <span class="text-xs mt-2">Home</span>
         </button>
     
-        <!-- Settings -->
         <button class="text-[#263D5F] flex flex-col items-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
                 <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
@@ -238,7 +229,6 @@
             <span class="text-xs mt-2">Settings</span>
         </button>
     
-        <!-- Profile -->
         <button class="text-[#263D5F] flex flex-col items-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#ED6F2C">
                 <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/>
@@ -247,6 +237,5 @@
         </button>
     </nav>
     
-
 </body>
 </html>
