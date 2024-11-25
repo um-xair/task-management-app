@@ -32,7 +32,7 @@
                 </svg>
             </button>
         </a>
-        <h1 class="text-white text-lg font-bold mt-6">TERMS OF SERVICES</h1>
+        <h1 class="text-white text-lg font-bold mt-6">LANGUAGE</h1>
         <a href="#" id="settings-button" class="bg-white p-2 rounded-full mt-6">
             <button class="w-full h-full flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
@@ -116,43 +116,28 @@
     </script>
     
     <section class="p-6 mt-[120px] text-justify">
-        <h2 class="text-2xl font-bold text-[#263D5F] mb-10">Terms of Service</h2>
-    
-        <div class="mb-6">
-            <h3 class="text-xl font-semibold text-[#263D5F] mb-2">1. Introduction</h3>
-            <p class="text-gray-700 text-sm">Welcome to our Task Management App. By accessing or using our services, you agree to comply with the terms outlined in this document. If you disagree with any part of the terms, please refrain from using our services.</p>
-        </div>
-    
-        <div class="mb-6">
-            <h3 class="text-xl font-semibold text-[#263D5F] mb-2">2. Account Creation</h3>
-            <p class="text-gray-700 text-sm">To use our app, you must create an account. You are responsible for maintaining the confidentiality of your login credentials and for all activities under your account. You agree to notify us immediately if you suspect any unauthorized access.</p>
-        </div>
-    
-        <div class="mb-6">
-            <h3 class="text-xl font-semibold text-[#263D5F] mb-2">3. Use of Services</h3>
-            <p class="text-gray-700 text-sm">You may use our app for managing tasks, creating projects, and collaborating with others. You agree not to misuse the app or disrupt its functionality, and to follow all applicable laws and regulations while using the service.</p>
-        </div>
-    
-        <div class="mb-6">
-            <h3 class="text-xl font-semibold text-[#263D5F] mb-2">4. Data Privacy</h3>
-            <p class="text-gray-700 text-sm">We value your privacy. Any personal data you provide will be processed in accordance with our Privacy Policy, which is available on our website. We will not share your data with third parties without your consent, except as required by law.</p>
-        </div>
-    
-        <div class="mb-6">
-            <h3 class="text-xl font-semibold text-[#263D5F] mb-2">5. Termination</h3>
-            <p class="text-gray-700 text-sm">We reserve the right to suspend or terminate your account if you violate our terms of service or engage in fraudulent or illegal activities. You can also terminate your account at any time by following the instructions in the account settings.</p>
-        </div>
-    
-        <div class="mb-6">
-            <h3 class="text-xl font-semibold text-[#263D5F] mb-2">6. Limitation of Liability</h3>
-            <p class="text-gray-700 text-sm">Our app is provided "as-is," and we are not liable for any direct, indirect, incidental, or consequential damages arising from your use of our services. We make no guarantees about the app's performance or uptime.</p>
-        </div>
-    
-        <div class="mb-6">
-            <h3 class="text-xl font-semibold text-[#263D5F] mb-2">7. Modifications</h3>
-            <p class="text-gray-700 text-sm">We may modify these terms from time to time. We will notify you of any significant changes. By continuing to use our app after changes are made, you agree to be bound by the updated terms.</p>
+        <form action="#" method="POST">
+            <div class="mb-4">
+                <label for="language-select" class="block text-lg font-semibold text-[#263D5F]">Select Language</label>
+                <div class="relative mt-2">
+                    <select id="language-select" name="language" class="block w-full p-2 bg-transparent border-b border-[#263D5F] text-[#263D5F] focus:outline-none focus:ring-0" style="-webkit-appearance: none; -moz-appearance: none; appearance: none;">
+                        <option value="en">English</option>
+                        <option value="ms">Malay</option>
+                        <option value="zh">Chinese</option>
+                    </select>
+                    <div class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
+                            <path d="M480-360 280-560h400L480-360Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <div class="fixed bottom-6 left-0 w-full p-6">
+            <button type="submit" class="bg-[#ED6F2C] text-white py-3 px-6 rounded-full text-lg font-semibold w-full">SUBMIT</button>
         </div>
     </section>
-    
+
 </body>
 </html>
