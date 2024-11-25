@@ -10,9 +10,11 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+        
         body.overflow-hidden {
             overflow: hidden; 
         }
+
         #side-menu {
             overflow-y: auto; 
         }
@@ -23,14 +25,14 @@
     <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-black opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
 
     <header class="bg-[#ED6F2C] fixed top-0 w-full z-50 rounded-b-[50px] p-6 flex items-center justify-between">
-        <a href="#" class="bg-white p-2 rounded-full mt-6">
+        <a href="nior.html" class="bg-white p-2 rounded-full mt-6">
             <button class="w-full h-full flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
                     <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
                 </svg>
             </button>
         </a>
-        <h1 class="text-white text-lg font-bold mt-6">COURSE & TRAINING</h1>
+        <h1 class="text-white text-lg font-bold mt-6">NIOR STROLLER</h1>
         <a href="#" id="settings-button" class="bg-white p-2 rounded-full mt-6">
             <button class="w-full h-full flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
@@ -113,20 +115,76 @@
         });
     </script>
     
-    <section class="p-6 mt-[120px] grid grid-cols-2 gap-4">
-        <a href="stroller.html" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center py-4">
-            <img src="assets/nior.webp" alt="Stroller" class="w-full h-auto mb-4">
-            <h3 class="text-[#263D5F] font-bold text-center text-lg">STROLLER</h3>
-        </a>
-        <a href="" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center py-4">
-            <img src="assets/maplee.webp" alt="Car Seat" class="w-full h-auto mb-4">
-            <h3 class="text-[#263D5F] font-bold text-center text-lg">CAR SEAT</h3>
-        </a>
-        <a href="" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center py-4">
-            <img src="assets/cherrie.png" alt="High Chair" class="w-full h-auto mb-4">
-            <h3 class="text-[#263D5F] font-bold text-center text-lg">HIGH CHAIR</h3>
+    <section class="mt-[120px]">
+        <!-- Video Section with iframe -->
+        <div class="p-8 mb-4">
+            <iframe width="100%" height="auto" 
+                src="https://www.youtube.com/embed/4pA6FJSQhjg?si=z2CxjuiPPV0JmSlz" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+    
+    <section class="bg-[#FDF1EA] w-full h-full rounded-t-[50px] p-8 mt-2">
+        <!-- Chapter Title and Description -->
+        <h2 class="text-[#263D5F] text-2xl font-bold mb-4">CHAPTER 1:</h2>
+        <p class="text-[#263D5F] text-sm text-justify">
+            Learn the essentials of using the Nior stroller in this quick, easy-to-follow guide. We'll cover assembly, seat adjustments, folding, safety features, and maintenance tips to ensure you and your baby enjoy every stroll.
+        </p>
+    
+        <!-- Additional Content Section -->
+        <h2 class="text-[#263D5F] text-md font-semibold mt-10">Read about the Roxy Premium Stroller</h2>
+        <div class="bg-white p-6 rounded-[20px] mt-4">
+            <ul class="list-disc pl-6 space-y-2">
+                <li class="text-[#263D5F] text-sm">For Newborns to 6 Years</li>
+                <li class="text-[#263D5F] text-sm">Luggage Design</li>
+                <li class="text-[#263D5F] text-sm">Indoor & Outdoor Use</li>
+                <li class="text-[#263D5F] text-sm">2-Way Reversible Facing</li>     
+                <!-- Hidden additional features -->
+                <li class="text-[#263D5F] text-sm" id="feature1" style="display: none;">Large Rubber Wheels</li>
+                <li class="text-[#263D5F] text-sm" id="feature2" style="display: none;">Bamboo Fabric Lining</li>
+                <li class="text-[#263D5F] text-sm" id="feature3" style="display: none;">SMART-MAMA Bag</li>
+                <li class="text-[#263D5F] text-sm" id="feature4" style="display: none;">Travel System Compatible</li>
+            </ul>
+    
+            <!-- Read More Button -->
+            <button onclick="toggleFeatures()" class="mt-4 md:w-1/4 w-1/2 bg-[#ED6F2C] text-white py-3 rounded-full text-sm font-semibold" id="readMoreButton">
+                Read More
+            </button>
+        </div>
+    
+        <!-- Quiz Button -->
+        <a href="quiz.html">
+            <button class="mt-10 w-full bg-[#ED6F2C] text-white py-3 rounded-full text-lg font-semibold">
+                TAKE QUIZ
+            </button>
         </a>
     </section>
-     
+    
+        
+    <script>
+        function toggleFeatures() {
+            var hiddenFeatures = document.querySelectorAll('#feature1, #feature2, #feature3, #feature4');
+            var button = document.getElementById('readMoreButton');
+        
+            hiddenFeatures.forEach(function(feature) {
+                if (feature.style.display === "none") {
+                    feature.style.display = "list-item";  
+                } else {
+                    feature.style.display = "none";  
+                }
+            });
+    
+            if (hiddenFeatures[0].style.display === "none") {
+                button.textContent = 'Read More';  
+            } else {
+                button.textContent = 'Show Less';  
+            }
+        }
+    </script>
+
 </body>
 </html>
