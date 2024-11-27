@@ -116,99 +116,84 @@
     </script>
     
     <section class="p-6 mt-[120px]">
-        <div class="grid grid-cols-3 gap-2 items-center">
-            <div class="flex flex-col items-center">
-                <img src="assets/pfp-1.jpg" alt="Left Profile" class="w-20 h-20 rounded-full">
-                <p class="mt-2 text-sm text-gray-600">team 1</p>
-                <p class="text-2xl font-bold text-[#263D5F]">123</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/pfp-2.jpg" alt="Middle Profile" class="w-28 h-28 rounded-full">
-                <p class="mt-2 text-sm text-gray-600">winner</p>
-                <p class="text-2xl font-bold text-[#263D5F]">500</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/pfp-3.jpg" alt="Right Profile" class="w-20 h-20 rounded-full">
-                <p class="mt-2 text-sm text-gray-600">team 2</p>
-                <p class="text-2xl font-bold text-[#263D5F]">298</p>
-            </div>
+        <div class="flex items-center border rounded-lg p-2 bg-white">
+            <input 
+                id="searchInput"
+                type="text" 
+                placeholder="Search..." 
+                class="flex-1 px-4 py-2 text-sm text-gray-600 focus:outline-none" 
+                onkeyup="searchFunction()"
+            />
+            <button class="p-2 text-white bg-[#263D5F] rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
         </div>
     </section>
-
-    <section class="px-6 grid grid-cols-3 gap-4 text-center mb-4">
-        <div class="flex justify-center">
-            <div class="bg-white text-[#ED6F2C] font-semibold border-4 border-[#ED6F2C] rounded-full w-12 h-12 flex items-center justify-center">
-                2
-            </div>
-        </div>
-        <div class="flex justify-center">
-            <div class="bg-[#ED6F2C] text-white font-semibold rounded-full w-12 h-12 flex items-center justify-center">
-                1
-            </div>
-        </div>
-        <div class="flex justify-center">
-            <div class="bg-white text-[#ED6F2C] font-semibold border-4 border-[#ED6F2C] rounded-full w-12 h-12 flex items-center justify-center">
-                3
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-[#FDF1EA] w-full h-full rounded-t-[50px] p-8 mt-2 flex flex-col space-y-4">
-        <div class="flex items-center">
-            <div class="flex-shrink-0 bg-[#ED6F2C] text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center mr-4">
-                4
-            </div>
-            <div class="bg-white p-6 rounded-[20px] w-full">
-                <div class="flex items-center">
-                    <div class="w-1/4">
-                        <img src="assets/pfp-1.jpg" alt="Nior Stroller" class="rounded-full w-full">
-                    </div>
-                    <div class="w-2/4 px-4">
-                        <h2 class="text-[#263D5F] text-md mb-2">Team 2</h2>
-                    </div>
-                    <div class="w-1/4 text-right">
-                        <span class="text-[#263D5F] text-4xl font-bold">103</span>
-                    </div>
+    
+    <section id="teamList" class="w-full h-full px-6 mt-2 flex flex-col space-y-4">
+        <div class="bg-[#FDF1EA] p-6 rounded-[20px] w-full flex items-center teamItem">
+            <div class="flex items-center w-full">
+                <div class="w-1/4">
+                    <img src="assets/pfp-1.jpg" alt="Profile Picture" class="rounded-full w-full">
+                </div>
+                <div class="w-3/4 pl-4">
+                    <h2 class="text-[#263D5F] text-lg font-semibold">Team 2</h2>
+                    <p class="text-sm text-gray-600">Lead Developer</p>
+                </div>
+                <div class="w-2/4 text-center">
+                    <span class="bg-red-100 text-black px-4 py-2 rounded-full text-sm">IT</span>
                 </div>
             </div>
         </div>
-        <div class="flex items-center">
-            <div class="flex-shrink-0 bg-[#ED6F2C] text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center mr-4">
-                5
-            </div>
-            <div class="bg-white p-6 rounded-[20px] w-full">
-                <div class="flex items-center">
-                    <div class="w-1/4">
-                        <img src="assets/pfp-2.jpg" alt="Roxy Stroller" class="rounded-full w-full">
-                    </div>
-                    <div class="w-2/4 px-4">
-                        <h2 class="text-[#263D5F] text-md mb-2">Team 3</h2>
-                    </div>
-                    <div class="w-1/4 text-right">
-                        <span class="text-[#263D5F] text-4xl font-bold">84</span>
-                    </div>
+        <div class="bg-[#FDF1EA] p-6 rounded-[20px] w-full flex items-center teamItem">
+            <div class="flex items-center w-full">
+                <div class="w-1/4">
+                    <img src="assets/pfp-2.jpg" alt="Profile Picture" class="rounded-full w-full">
+                </div>
+                <div class="w-3/4 pl-4">
+                    <h2 class="text-[#263D5F] text-lg font-semibold">Team 3</h2>
+                    <p class="text-sm text-gray-600">Marketing</p>
+                </div>
+                <div class="w-2/4 text-center">
+                    <span class="bg-green-100 text-black px-4 py-2 rounded-full text-sm">Marketing</span>
                 </div>
             </div>
         </div>
-        <div class="flex items-center">
-            <div class="flex-shrink-0 bg-[#ED6F2C] text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center mr-4">
-                6
-            </div>
-            <div class="bg-white p-6 rounded-[20px] w-full">
-                <div class="flex items-center">
-                    <div class="w-1/4">
-                        <img src="assets/pfp-3.jpg" alt="Galaxy Stroller" class="rounded-full w-full">
-                    </div>
-                    <div class="w-2/4 px-4">
-                        <h2 class="text-[#263D5F] text-md mb-2">Team 4</h2>
-                    </div>
-                    <div class="w-1/4 text-right">
-                        <span class="text-[#263D5F] text-4xl font-bold">32</span>
-                    </div>
+        <div class="bg-[#FDF1EA] p-6 rounded-[20px] w-full flex items-center teamItem">
+            <div class="flex items-center w-full">
+                <div class="w-1/4">
+                    <img src="assets/pfp-3.jpg" alt="Profile Picture" class="rounded-full w-full">
+                </div>
+                <div class="w-3/4 pl-4">
+                    <h2 class="text-[#263D5F] text-lg font-semibold">Team 4</h2>
+                    <p class="text-sm text-gray-600">Admin</p>
+                </div>
+                <div class="w-2/4 text-center">
+                    <span class="bg-blue-100 text-black px-4 py-2 rounded-full text-sm">Admin</span>
                 </div>
             </div>
         </div>
     </section>
+    
+    <script>
+        function searchFunction() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.teamItem');
+            
+            items.forEach(item => {
+                const teamName = item.querySelector('h2').textContent.toLowerCase();
+                if (teamName.includes(input)) {
+                    item.style.display = ''; 
+                } else {
+                    item.style.display = 'none'; 
+                }
+            });
+        }
+    </script>
+    
 
     <script>
         function toggleFeatures() {

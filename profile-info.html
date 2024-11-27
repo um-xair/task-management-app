@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body.overflow-hidden {
+            overflow: hidden; 
+        }
+
+        #side-menu {
+            overflow-y: auto; 
+        }
+    </style>
+</head>
+<body class="bg-white h-screen flex flex-col">
+
+    <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-black opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+
+    <header class="bg-[#ED6F2C] fixed top-0 w-full z-50 rounded-b-[50px] p-6 flex items-center justify-between">
+        <a href="setting.html" class="bg-white p-2 rounded-full mt-6">
+            <button class="w-full h-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
+                    <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+                </svg>
+            </button>
+        </a>
+        <h1 class="text-white text-lg font-bold mt-6">PRODILE INFORMATION</h1>
+        <a href="#" id="settings-button" class="bg-white p-2 rounded-full mt-6">
+            <button class="w-full h-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
+                    <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
+                </svg>
+            </button>
+        </a>
+    </header>
+    
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[80%] bg-white shadow-md transform translate-x-full transition-transform duration-300 z-50">
+        <div class="bg-[#ED6F2C] p-4 border-b">
+            <div class="flex justify-end">
+                <button id="close-menu" class="bg-white p-2 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
+                        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex items-center mt-4 text-white">
+                <img src="assets/pfp.jpg" alt="User" class="w-16 h-16 rounded-full mr-4">
+                <div>
+                    <h2 class="font-bold text-lg">ALYSSA UMAIRAH</h2>
+                    <p class="text-sm">Front-end Developer</p>
+                </div>
+            </div>
+        </div>
+        <ul class="p-4">
+            <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
+                    <path d="M180-120q-25 0-42.5-17.5T120-180v-76l160-142v278H180Zm140 0v-160h320v160H320Zm360 0v-328L509-600l121-107 190 169q10 9 15 20.5t5 24.5v313q0 25-17.5 42.5T780-120H680ZM120-310v-183q0-13 5-25t15-20l300-266q8-8 18.5-11.5T480-819q11 0 21.5 3.5T520-804l80 71-480 423Z"/>
+                </svg>
+                <span>Home</span>
+            </li>
+            <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
+                    <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/>
+                </svg>
+                <span>Task Management</span>
+            </li>
+            <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
+                    <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
+                </svg>
+                <span>Settings</span>
+            </li>
+            <li class="flex items-center gap-x-4 py-4 font-semibold text-red-500 cursor-pointer border-b border-[#263D5F]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FF0000">
+                    <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
+                </svg>
+                <span>Logout</span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const settingsButton = document.getElementById("settings-button");
+            const sideMenu = document.getElementById("side-menu");
+            const closeMenuButton = document.getElementById("close-menu");
+            const overlay = document.getElementById("overlay");
+            const body = document.body;
+    
+            settingsButton.addEventListener("click", () => {
+                sideMenu.classList.remove("translate-x-full");
+                overlay.classList.add("opacity-50", "pointer-events-auto");
+                body.classList.add("overflow-hidden"); 
+            });
+    
+            closeMenuButton.addEventListener("click", () => {
+                sideMenu.classList.add("translate-x-full");
+                overlay.classList.remove("opacity-50", "pointer-events-auto");
+                body.classList.remove("overflow-hidden"); 
+            });
+    
+            overlay.addEventListener("click", () => {
+                sideMenu.classList.add("translate-x-full");
+                overlay.classList.remove("opacity-50", "pointer-events-auto");
+                body.classList.remove("overflow-hidden"); 
+            });
+        });
+    </script>
+    
+    <section class="p-6 mt-[120px]">
+
+        <div class="bg-[#ED6F2C] p-6 rounded-[30px] grid grid-cols-4 items-center space-x-4">
+            <div class="w-full col-span-1">
+                <img src="assets/pfp-1.jpg" alt="Profile Picture" class="rounded-full w-full h-auto">
+            </div>
+            <div class="col-span-3">
+                <h3 class="text-white font-bold text-xl">ALYSSA UMAIRAH</h3>
+                <p class="text-white text-sm">Front-end Developer</p>
+            </div>
+        </div>
+
+        <form action="#" method="POST" class="mt-10 px-4">
+            <div class="flex items-center justify-between">
+                <label for="full-name" class="text-lg font-semibold text-[#263D5F]">Full Name</label>
+                <button type="button" id="cancel-btn" onclick="cancelEditing()" class="text-[#263D5F] font-semibold border-b border-[#263D5F] text-sm hidden">
+                    Cancel
+                </button>
+            </div>
+            <div class="flex items-center mt-2 border-b border-[#263D5F] w-full">
+                <input type="text" id="full-name" name="full-name" value="Natasya Umairah" class="w-full p-2 bg-transparent border-0 focus:ring-0 focus:outline-none" readonly required>
+                <button type="button" id="pencil-icon" class="ml-2 text-gray-500" onclick="enableEditing()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
+                        <path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="edit-buttons" class="mt-4 flex items-center space-x-4 mb-6 hidden">
+                <button type="button" onclick="saveChanges()" class="bg-[#ED6F2C] text-white py-2 px-4 rounded-full text-sm font-semibold w-24">Save</button>
+            </div>
+            
+            <script>
+                function enableEditing() {
+                    const fullNameInput = document.getElementById('full-name');
+                    const pencilIcon = document.getElementById('pencil-icon');
+                    const cancelBtn = document.getElementById('cancel-btn');
+                    const editButtons = document.getElementById('edit-buttons');
+                    fullNameInput.removeAttribute('readonly');
+                    fullNameInput.focus();
+                    editButtons.classList.remove('hidden');
+                    cancelBtn.classList.remove('hidden');
+                    pencilIcon.classList.add('hidden');
+                }
+                
+                function saveChanges() {
+                    const fullNameInput = document.getElementById('full-name');
+                    const pencilIcon = document.getElementById('pencil-icon');
+                    const cancelBtn = document.getElementById('cancel-btn');
+                    const editButtons = document.getElementById('edit-buttons');
+                    fullNameInput.setAttribute('readonly', true);
+                    editButtons.classList.add('hidden');
+                    cancelBtn.classList.add('hidden');
+                    pencilIcon.classList.remove('hidden');
+                }
+                
+                function cancelEditing() {
+                    const fullNameInput = document.getElementById('full-name');
+                    const pencilIcon = document.getElementById('pencil-icon');
+                    const cancelBtn = document.getElementById('cancel-btn');
+                    const editButtons = document.getElementById('edit-buttons');
+                    fullNameInput.value = "Natasya Umairah"; 
+                    fullNameInput.setAttribute('readonly', true);
+                    editButtons.classList.add('hidden');
+                    cancelBtn.classList.add('hidden');
+                    pencilIcon.classList.remove('hidden');
+                }
+            </script>
+
+            <!-- Email Field -->
+<div class="flex items-center justify-between">
+    <label for="email" class="text-lg font-semibold text-[#263D5F]">Email</label>
+    <button type="button" id="cancel-btn-email" onclick="cancelEditing('email')" class="text-[#263D5F] font-semibold border-b border-[#263D5F] text-sm hidden">
+        Cancel
+    </button>
+</div>
+<div class="flex items-center mt-2 border-b border-[#263D5F] w-full">
+    <input type="email" id="email" name="email" value="natasya@example.com" class="w-full p-2 bg-transparent border-0 focus:ring-0 focus:outline-none" readonly required>
+    <button type="button" id="pencil-icon-email" class="ml-2 text-gray-500" onclick="enableEditing('email')">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
+            <path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"/>
+        </svg>
+    </button>
+</div>
+<div id="edit-buttons-email" class="mt-4 flex items-center space-x-4 mb-6 hidden">
+    <button type="button" onclick="saveChanges('email')" class="bg-[#ED6F2C] text-white py-2 px-4 rounded-full text-sm font-semibold w-24">Save</button>
+</div>
+
+
+<script>
+    // Enable editing function
+function enableEditing(field) {
+    const inputField = document.getElementById(field);
+    const pencilIcon = document.getElementById(`pencil-icon-${field}`);
+    const cancelBtn = document.getElementById(`cancel-btn-${field}`);
+    const editButtons = document.getElementById(`edit-buttons-${field}`);
+
+    inputField.readOnly = false;
+    pencilIcon.style.display = 'none';
+    cancelBtn.style.display = 'block';
+    editButtons.style.display = 'flex';
+}
+
+// Cancel editing function
+function cancelEditing(field) {
+    const inputField = document.getElementById(field);
+    const pencilIcon = document.getElementById(`pencil-icon-${field}`);
+    const cancelBtn = document.getElementById(`cancel-btn-${field}`);
+    const editButtons = document.getElementById(`edit-buttons-${field}`);
+
+    inputField.readOnly = true;
+    pencilIcon.style.display = 'block';
+    cancelBtn.style.display = 'none';
+    editButtons.style.display = 'none';
+}
+
+// Save changes function (can be customized to handle form submissions or data saving)
+function saveChanges(field) {
+    const inputField = document.getElementById(field);
+    // Add code here to save changes (e.g., send data to a server)
+    alert(`Changes to ${field} saved: ${inputField.value}`);
+    cancelEditing(field);
+}
+
+</script>
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="mb-4 mt-10">
+                <label for="email" class="block text-lg font-semibold text-[#263D5F]">Email</label>
+                <div class="flex items-center mt-2 border-b border-[#263D5F] w-full">
+                    <input type="email" id="email" name="email" class="w-full p-2 bg-transparent border-0 focus:ring-0 focus:outline-none" required>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label for="ic-number" class="block text-lg font-semibold text-[#263D5F]">IC Number</label>
+                <div class="flex items-center mt-2 border-b border-[#263D5F] w-full">
+                    <input type="text" id="ic-number" name="ic-number" class="w-full p-2 bg-transparent border-0 focus:ring-0 focus:outline-none" required>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label for="phone-number" class="block text-lg font-semibold text-[#263D5F]">Phone Number</label>
+                <div class="flex items-center mt-2 border-b border-[#263D5F] w-full">
+                    <input type="tel" id="phone-number" name="phone-number" class="w-full p-2 bg-transparent border-0 focus:ring-0 focus:outline-none" required>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label for="dob" class="block text-lg font-semibold text-[#263D5F]">Date of Birth</label>
+                <div class="flex items-center mt-2 border-b border-[#263D5F] w-full">
+                    <input type="date" id="dob" name="dob" class="w-full p-2 bg-transparent border-0 focus:ring-0 focus:outline-none" required>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label for="address" class="block text-lg font-semibold text-[#263D5F]">Address</label>
+                <div class="flex items-center mt-2 border-b border-[#263D5F] w-full">
+                    <input type="text" id="address" name="address" class="w-full p-2 bg-transparent border-0 focus:ring-0 focus:outline-none" required>
+                </div>
+            </div>
+            
+        </form>
+        
+        <div class="fixed bottom-6 left-0 w-full p-6">
+            <button type="submit" class="bg-[#ED6F2C] text-white py-3 px-6 rounded-full text-lg font-semibold w-full">SUBMIT</button>
+        </div>
+    </section>
+    
+</body>
+</html>

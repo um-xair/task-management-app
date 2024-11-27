@@ -32,7 +32,7 @@
                 </svg>
             </button>
         </a>
-        <h1 class="text-white text-lg font-bold mt-6">LEADERBOARD</h1>
+        <h1 class="text-white text-lg font-bold mt-6">BABY FAIR - SELECT TEAM</h1>
         <a href="#" id="settings-button" class="bg-white p-2 rounded-full mt-6">
             <button class="w-full h-full flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
@@ -116,111 +116,105 @@
     </script>
     
     <section class="p-6 mt-[120px]">
-        <div class="grid grid-cols-3 gap-2 items-center">
-            <div class="flex flex-col items-center">
-                <img src="assets/pfp-1.jpg" alt="Left Profile" class="w-20 h-20 rounded-full">
-                <p class="mt-2 text-sm text-gray-600">team 1</p>
-                <p class="text-2xl font-bold text-[#263D5F]">123</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/pfp-2.jpg" alt="Middle Profile" class="w-28 h-28 rounded-full">
-                <p class="mt-2 text-sm text-gray-600">winner</p>
-                <p class="text-2xl font-bold text-[#263D5F]">500</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/pfp-3.jpg" alt="Right Profile" class="w-20 h-20 rounded-full">
-                <p class="mt-2 text-sm text-gray-600">team 2</p>
-                <p class="text-2xl font-bold text-[#263D5F]">298</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="px-6 grid grid-cols-3 gap-4 text-center mb-4">
-        <div class="flex justify-center">
-            <div class="bg-white text-[#ED6F2C] font-semibold border-4 border-[#ED6F2C] rounded-full w-12 h-12 flex items-center justify-center">
-                2
-            </div>
-        </div>
-        <div class="flex justify-center">
-            <div class="bg-[#ED6F2C] text-white font-semibold rounded-full w-12 h-12 flex items-center justify-center">
-                1
-            </div>
-        </div>
-        <div class="flex justify-center">
-            <div class="bg-white text-[#ED6F2C] font-semibold border-4 border-[#ED6F2C] rounded-full w-12 h-12 flex items-center justify-center">
-                3
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-[#FDF1EA] w-full h-full rounded-t-[50px] p-8 mt-2 flex flex-col space-y-4">
-        <div class="flex items-center">
-            <div class="flex-shrink-0 bg-[#ED6F2C] text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center mr-4">
-                4
-            </div>
-            <div class="bg-white p-6 rounded-[20px] w-full">
-                <div class="flex items-center">
-                    <div class="w-1/4">
-                        <img src="assets/pfp-1.jpg" alt="Nior Stroller" class="rounded-full w-full">
-                    </div>
-                    <div class="w-2/4 px-4">
-                        <h2 class="text-[#263D5F] text-md mb-2">Team 2</h2>
-                    </div>
-                    <div class="w-1/4 text-right">
-                        <span class="text-[#263D5F] text-4xl font-bold">103</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="flex items-center">
-            <div class="flex-shrink-0 bg-[#ED6F2C] text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center mr-4">
-                5
-            </div>
-            <div class="bg-white p-6 rounded-[20px] w-full">
-                <div class="flex items-center">
-                    <div class="w-1/4">
-                        <img src="assets/pfp-2.jpg" alt="Roxy Stroller" class="rounded-full w-full">
-                    </div>
-                    <div class="w-2/4 px-4">
-                        <h2 class="text-[#263D5F] text-md mb-2">Team 3</h2>
-                    </div>
-                    <div class="w-1/4 text-right">
-                        <span class="text-[#263D5F] text-4xl font-bold">84</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="flex items-center">
-            <div class="flex-shrink-0 bg-[#ED6F2C] text-white font-semibold rounded-full w-10 h-10 flex items-center justify-center mr-4">
-                6
-            </div>
-            <div class="bg-white p-6 rounded-[20px] w-full">
-                <div class="flex items-center">
-                    <div class="w-1/4">
-                        <img src="assets/pfp-3.jpg" alt="Galaxy Stroller" class="rounded-full w-full">
-                    </div>
-                    <div class="w-2/4 px-4">
-                        <h2 class="text-[#263D5F] text-md mb-2">Team 4</h2>
-                    </div>
-                    <div class="w-1/4 text-right">
-                        <span class="text-[#263D5F] text-4xl font-bold">32</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function toggleFeatures() {
-            const features = document.querySelectorAll('#feature1, #feature2, #feature3, #feature4');
-            features.forEach(feature => {
-                feature.style.display = feature.style.display === 'none' ? 'list-item' : 'none';
-            });
+        <h2 class="text-[#263D5F] text-lg font-bold mb-4">Select Teams for Baby Fair</h2>
     
-            const button = document.getElementById('readMoreButton');
-            button.textContent = button.textContent === 'Read More' ? 'Show Less' : 'Read More';
-        }
+        <form action="#" method="POST" class="space-y-6 mb-[150px]">
+            <!-- Baby Fair Type -->
+            <div class="mt-10">
+                <label for="fairType" class="block text-md text-[#263D5F] font-semibold">Baby Fair Type:</label>
+                <select id="fairType" name="fairType" class="w-full p-3 border border-gray-300 rounded-md">
+                    <option value="">Select Type</option>
+                    <option value="tce_baby">TCE BABY</option>
+                    <option value="big_baby">BIG BABY</option>
+                    <option value="baby_expo">BABY EXPO</option>
+                </select>
+            </div>
+    
+            <!-- Event Location -->
+            <div class="">
+                <label for="eventLocation" class="block text-md text-[#263D5F] font-semibold">Event Location:</label>
+                <select id="eventLocation" name="eventLocation" class="w-full p-3 border border-gray-300 rounded-md">
+                    <option value="">Select Location</option>
+                    <option value="ioi_mall_putrajaya">IOI Mall Putrajaya</option>
+                    <option value="mid_valley_southkey_jb">Mid Valley Southkey JB</option>
+                    <option value="penang">Penang</option>
+                </select>
+            </div>
+    
+            <!-- Department Selection -->
+            <div class="">
+                <label for="categorySelect" class="block text-md text-[#263D5F] font-semibold">Select Department:</label>
+                <select id="categorySelect" name="category" class="w-full p-3 border border-gray-300 rounded-md">
+                    <option value="">Choose a Department</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="admin">Admin</option>
+                    <option value="sales">Sales</option>
+                </select>
+            </div>
+    
+            <!-- Member Selection -->
+            <div id="memberSelectContainer" style="display:none;" class="mb-6">
+                <label class="block text-md text-[#263D5F]">Choose Members:</label>
+                <div id="members" class="space-y-2"></div>
+            </div>
+    
+            <!-- Date Range Selection -->
+            <div class="space-y-2">
+                <label for="dateFrom" class="block text-md text-[#263D5F] font-semibold">Date Joined (From):</label>
+                <input type="date" id="dateFrom" name="dateFrom" class="w-full p-3 border border-gray-300 rounded-md">
+    
+                <label for="dateTo" class="block text-md text-[#263D5F] font-semibold">Date Joined (To):</label>
+                <input type="date" id="dateTo" name="dateTo" class="w-full p-3 border border-gray-300 rounded-md">
+            </div>
+    
+            <!-- Submit Button -->
+            <div class="fixed bottom-6 left-0 w-full p-6">
+                <button type="submit" class="bg-[#ED6F2C] text-white py-3 px-6 rounded-full text-lg font-semibold w-full">ADD</button>
+            </div>
+        </form>
+    </section>
+    
+    <script>
+        // Sample member data for each category
+        const membersData = {
+            marketing: [
+                { id: "team1", name: "Team 1 - Marketing" },
+                { id: "team2", name: "Team 2 - Marketing" }
+            ],
+            admin: [
+                { id: "team3", name: "Team 3 - Admin" },
+                { id: "team4", name: "Team 4 - Admin" }
+            ],
+            sales: [
+                { id: "team5", name: "Team 5 - Sales" },
+                { id: "team6", name: "Team 6 - Sales" }
+            ]
+        };
+    
+        document.getElementById('categorySelect').addEventListener('change', function() {
+            const selectedCategory = this.value;
+            const memberSelectContainer = document.getElementById('memberSelectContainer');
+            const membersDiv = document.getElementById('members');
+            membersDiv.innerHTML = '';
+    
+            if (selectedCategory) {
+                memberSelectContainer.style.display = 'block';
+                const members = membersData[selectedCategory] || [];
+                members.forEach(member => {
+                    const memberCheckbox = document.createElement('div');
+                    memberCheckbox.innerHTML = `
+                        <label>
+                            <input type="checkbox" name="members" value="${member.id}"> ${member.name}
+                        </label>
+                    `;
+                    membersDiv.appendChild(memberCheckbox);
+                });
+            } else {
+                memberSelectContainer.style.display = 'none'; 
+            }
+        });
     </script>
+    
     
 </body>
 </html>
