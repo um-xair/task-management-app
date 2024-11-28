@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body.overflow-hidden {
+            overflow: hidden; 
+        }
+
+        #side-menu {
+            overflow-y: auto; 
+        }
+    </style>
+</head>
+<body class="bg-white h-screen flex flex-col">
+
+    <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-black opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+
+    <header class="bg-[#ED6F2C] fixed top-0 w-full z-50 rounded-b-[50px] p-6 flex items-center justify-between">
+        <a href="setting.html" class="bg-white p-2 rounded-full mt-6">
+            <button class="w-full h-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
+                    <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+                </svg>
+            </button>
+        </a>
+        <h1 class="text-white text-lg font-bold mt-6">TASK MANAGEMENT</h1>
+        <a href="#" id="settings-button" class="bg-white p-2 rounded-full mt-6">
+            <button class="w-full h-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
+                    <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
+                </svg>
+            </button>
+        </a>
+    </header>
+    
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[80%] bg-white shadow-md transform translate-x-full transition-transform duration-300 z-50">
+        <div class="bg-[#ED6F2C] p-4 border-b">
+            <div class="flex justify-end">
+                <button id="close-menu" class="bg-white p-2 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
+                        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex items-center mt-4 text-white">
+                <img src="assets/pfp.jpg" alt="User" class="w-16 h-16 rounded-full mr-4">
+                <div>
+                    <h2 class="font-bold text-lg">ALYSSA UMAIRAH</h2>
+                    <p class="text-sm">Front-end Developer</p>
+                </div>
+            </div>
+        </div>
+        <ul class="p-4">
+            <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
+                    <path d="M180-120q-25 0-42.5-17.5T120-180v-76l160-142v278H180Zm140 0v-160h320v160H320Zm360 0v-328L509-600l121-107 190 169q10 9 15 20.5t5 24.5v313q0 25-17.5 42.5T780-120H680ZM120-310v-183q0-13 5-25t15-20l300-266q8-8 18.5-11.5T480-819q11 0 21.5 3.5T520-804l80 71-480 423Z"/>
+                </svg>
+                <span>Home</span>
+            </li>
+            <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
+                    <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/>
+                </svg>
+                <span>Task Management</span>
+            </li>
+            <li class="flex items-center gap-x-4 py-4 font-semibold text-[#263D5F] cursor-pointer border-b border-[#263D5F]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#263D5F">
+                    <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
+                </svg>
+                <span>Settings</span>
+            </li>
+            <li class="flex items-center gap-x-4 py-4 font-semibold text-red-500 cursor-pointer border-b border-[#263D5F]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FF0000">
+                    <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
+                </svg>
+                <span>Logout</span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const settingsButton = document.getElementById("settings-button");
+            const sideMenu = document.getElementById("side-menu");
+            const closeMenuButton = document.getElementById("close-menu");
+            const overlay = document.getElementById("overlay");
+            const body = document.body;
+    
+            settingsButton.addEventListener("click", () => {
+                sideMenu.classList.remove("translate-x-full");
+                overlay.classList.add("opacity-50", "pointer-events-auto");
+                body.classList.add("overflow-hidden"); 
+            });
+    
+            closeMenuButton.addEventListener("click", () => {
+                sideMenu.classList.add("translate-x-full");
+                overlay.classList.remove("opacity-50", "pointer-events-auto");
+                body.classList.remove("overflow-hidden"); 
+            });
+    
+            overlay.addEventListener("click", () => {
+                sideMenu.classList.add("translate-x-full");
+                overlay.classList.remove("opacity-50", "pointer-events-auto");
+                body.classList.remove("overflow-hidden"); 
+            });
+        });
+    </script>
+    
+    <section class="p-6 mt-[120px]">
+        <div class="bg-[#ED6F2C] p-6 rounded-[30px] grid grid-cols-4 items-center space-x-6">
+            <div class="flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#FFFFFF">
+                    <path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/>
+                </svg>
+            </div>
+            <div class="text-white text-xl font-semibold">
+                INFORMATION TECHNOLOGY
+            </div>
+        </div>
+        
+        <div class="mt-4 px-2 grid grid-cols-2 gap-4">
+            <a href="stroller.html" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center items-center py-4 w-full h-[200px]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#ED6F2C">
+                    <path d="m438-240 226-226-58-58-169 169-84-84-57 57 142 142ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
+                </svg>
+                <h3 class="mt-4 text-[#ED6F2C] font-bold text-center text-lg">VIEW TASK</h3>
+            </a>
+            <a href="" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center items-center py-4 w-full h-[200px]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#ED6F2C">
+                    <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h168q13-36 43.5-58t68.5-22q38 0 68.5 22t43.5 58h168q33 0 56.5 23.5T840-760v268q-19-9-39-15.5t-41-9.5v-243H200v560h242q3 22 9.5 42t15.5 38H200Zm0-120v40-560 243-3 280Zm80-40h163q3-21 9.5-41t14.5-39H280v80Zm0-160h244q32-30 71.5-50t84.5-27v-3H280v80Zm0-160h400v-80H280v80Zm200-190q13 0 21.5-8.5T510-820q0-13-8.5-21.5T480-850q-13 0-21.5 8.5T450-820q0 13 8.5 21.5T480-790ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40Zm-20-80h40v-100h100v-40H740v-100h-40v100H600v40h100v100Z"/>
+                </svg>
+                <h3 class="mt-4 text-[#ED6F2C] font-bold text-center text-lg">ADD TASK</h3>
+            </a>
+            <a href="" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center items-center py-4 w-full h-[200px]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#ED6F2C">
+                    <path d="m434-297 226-227-56-56-170 170-85-85-57 57 142 141ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/>
+                </svg>
+                <h3 class="mt-4 text-[#ED6F2C] font-bold text-center text-lg">COMPLETE</h3>
+            </a>
+            <a href="" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center items-center py-4 w-full h-[200px] relative">
+                <div class="absolute top-2 right-2 bg-[#263D5F] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                    1
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#ED6F2C">
+                    <path d="M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120Zm160-360q66 0 113-47t47-113v-120H320v120q0 66 47 113t113 47ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z"/>
+                </svg>
+                <h3 class="mt-4 text-[#ED6F2C] font-bold text-center text-lg">IN PROGRESS</h3>
+            </a>
+            <a href="" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center items-center py-4 w-full h-[200px] relative">
+                <div class="absolute top-2 right-2 bg-[#263D5F] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
+                    2
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#ED6F2C">
+                    <path d="M680-80q-83 0-141.5-58.5T480-280q0-83 58.5-141.5T680-480q83 0 141.5 58.5T880-280q0 83-58.5 141.5T680-80Zm67-105 28-28-75-75v-112h-40v128l87 87Zm-547 65q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v250q-18-13-38-22t-42-16v-212h-80v120H280v-120h-80v560h212q7 22 16 42t22 38H200Zm280-640q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"/>
+                </svg>
+                <h3 class="mt-4 text-[#ED6F2C] font-bold text-center text-lg">PENDING</h3>
+            </a>
+        </div>
+    </section>
+    
+   
+</body>
+</html>
