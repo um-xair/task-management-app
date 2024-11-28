@@ -113,21 +113,42 @@
         });
     </script>
     
-    <section class="p-6 mt-[120px] grid grid-cols-2 gap-4">
-        <a href="stroller.html" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center items-center py-4 w-full h-[200px]">
-            <div class="bg-[#ED6F2C] w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#FFFFFF">
-                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
-                </svg>
+    <section class="p-6 mt-[120px] grid grid-cols-1 gap-4">
+        <div class="space-y-6">
+            <div class="bg-[#FDF1EA] rounded-[20px] p-4 flex relative cursor-pointer">
+                <span class="absolute top-2 right-2 w-6 h-6 bg-[#ED6F2C] rounded-full flex items-center justify-center text-white text-xs">
+                    !
+                </span>
+                <div class="w-full pr-4">
+                    <h3 class="text-lg font-bold text-[#263D5F]">Request Name 1</h3>
+                    <p class="text-[#263D5F] text-xs mt-2">
+                        This is a brief description of the request. It is limited to 10 words max.
+                    </p>
+                </div>
             </div>
-            <h3 class="mt-4 text-[#ED6F2C] font-bold text-center text-lg">ADD REQUEST</h3>
-        </a>
-        <a href="" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center items-center py-4 w-full h-[200px]">
-                <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#ED6F2C">
-                    <path d="M480-120q-138 0-240.5-91.5T122-440h82q14 104 92.5 172T480-200q117 0 198.5-81.5T760-480q0-117-81.5-198.5T480-760q-69 0-129 32t-101 88h110v80H120v-240h80v94q51-64 124.5-99T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-120Zm112-192L440-464v-216h80v184l128 128-56 56Z"/>
-                </svg>
-            <h3 class="mt-4 text-[#ED6F2C] font-bold text-center text-lg">VIEW HISTORY</h3>
-        </a>
+            <div class="bg-[#FDF1EA] rounded-[20px] p-4 flex relative cursor-pointer">
+                <span class="absolute top-2 right-2 w-6 h-6 bg-[#ED6F2C] rounded-full flex items-center justify-center text-white text-xs">
+                    !
+                </span>
+                <div class="w-full pr-4">
+                    <h3 class="text-lg font-bold text-[#263D5F]">Request Name 2</h3>
+                    <p class="text-[#263D5F] text-xs mt-2">
+                        Another brief request description with a 10-word limit.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-[#FDF1EA] rounded-[20px] p-4 flex relative cursor-pointer">
+                <span class="absolute top-2 right-2 w-6 h-6 bg-[#ED6F2C] rounded-full flex items-center justify-center text-white text-xs">
+                    !
+                </span>
+                <div class="w-full pr-4">
+                    <h3 class="text-lg font-bold text-[#263D5F]">Request Name 3</h3>
+                    <p class="text-[#263D5F] text-xs mt-2">
+                        Details of the request, no more than 10 words allowed.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
 </body>

@@ -30,7 +30,7 @@
                 </svg>
             </button>
         </a>
-        <h1 class="text-white text-lg font-bold mt-6">PK CORNER</h1>
+        <h1 class="text-white text-lg font-bold mt-6">REQUEST HISTORY</h1>
         <a href="#" id="settings-button" class="bg-white p-2 rounded-full mt-6">
             <button class="w-full h-full flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ED6F2C">
@@ -113,22 +113,101 @@
         });
     </script>
     
-    <section class="p-6 mt-[120px] grid grid-cols-2 gap-4">
-        <a href="stroller.html" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center items-center py-4 w-full h-[200px]">
-            <div class="bg-[#ED6F2C] w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#FFFFFF">
-                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
-                </svg>
+    <section class="p-6 mt-[120px]">
+        <div class="space-y-6">
+            <div class="bg-[#FDF1EA] rounded-[20px] p-4 flex cursor-pointer" onclick="openModal('Request Name 3', 'Alyssa Umairah', 'alyssa@gmail.com', 'Working from home', 'Working from home from Monday to Friday', '01/01/2024', '01/31/2024', 'Employee has shown excellent performance.')">
+                <div class="w-2/3 pr-4">
+                    <h3 class="text-lg font-bold text-[#263D5F]">Request Name 3</h3>
+                    <p class="text-[#263D5F] text-xs mt-2">
+                        Details of the request, no more than 10 words allowed.
+                    </p>
+                </div>
+                <div class="w-1/3 flex items-center justify-center">
+                    <span class="bg-[#FF0000] text-white py-2 px-4 rounded-full text-sm">Rejected</span>
+                </div>
             </div>
-            <h3 class="mt-4 text-[#ED6F2C] font-bold text-center text-lg">ADD REQUEST</h3>
-        </a>
-        <a href="" class="bg-[#FDF1EA] rounded-[20px] flex flex-col justify-center items-center py-4 w-full h-[200px]">
-                <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#ED6F2C">
-                    <path d="M480-120q-138 0-240.5-91.5T122-440h82q14 104 92.5 172T480-200q117 0 198.5-81.5T760-480q0-117-81.5-198.5T480-760q-69 0-129 32t-101 88h110v80H120v-240h80v94q51-64 124.5-99T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-120Zm112-192L440-464v-216h80v184l128 128-56 56Z"/>
-                </svg>
-            <h3 class="mt-4 text-[#ED6F2C] font-bold text-center text-lg">VIEW HISTORY</h3>
-        </a>
+        </div>
     </section>
-
+    
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-[30px] p-6 w-[90%] max-w-lg relative">
+            <button class="absolute top-4 right-4 bg-red-600 rounded-full p-2 flex items-center justify-center" onclick="closeModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </button>
+            <h2 class="text-center text-xl font-bold text-[#263D5F] mb-8" id="modal-title">REQUEST NAME</h2>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <h3 class="text-md font-semibold text-[#263D5F]">Employee Name:</h3>
+                    <p class="text-gray-700 text-sm" id="employee-name">Alyssa Umairah</p>
+                </div>
+                <div>
+                    <h3 class="text-md font-semibold text-[#263D5F]">Employee Email:</h3>
+                    <p class="text-gray-700 text-sm" id="employee-email">alyssa@gmail.com</p>
+                </div>
+            </div>
+            <hr class="my-4 border-[#263D5F]">
+            <div class="mb-4">
+                <h3 class="text-md font-semibold text-[#263D5F]">Request:</h3>
+                <p class="text-gray-700 text-sm" id="request-name">Working from home</p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-md font-semibold text-[#263D5F]">Details:</h3>
+                <p class="text-gray-700 text-sm" id="request-details">Working from home from Monday to Friday</p>
+            </div>
+            <hr class="my-4 border-[#263D5F]">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <h3 class="text-md font-semibold text-[#263D5F]">Start Date:</h3>
+                    <p class="text-gray-700 text-sm" id="start-date">01/01/2024</p>
+                </div>
+                <div>
+                    <h3 class="text-md font-semibold text-[#263D5F]">End Date:</h3>
+                    <p class="text-gray-700 text-sm" id="end-date">01/31/2024</p>
+                </div>
+            </div>
+            <hr class="my-4 border-[#263D5F]">
+            <div class="mb-4">
+                <h3 class="text-md font-semibold text-[#263D5F]">Reward Suggestion:</h3>
+                <p class="text-gray-700 text-sm" id="reward-suggestion">Employee has shown excellent performance.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <h3 class="text-md font-semibold text-[#263D5F]">Status:</h3>
+                </div>
+                <div class="flex items-center justify-end">
+                    <span class="bg-green-500 text-white py-1 px-4 rounded-full mr-4 lg:w-2/4 w-3/4 text-center" id="status">Approve</span>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="w-full bg-white text-[#ED6F2C] border-2 border-[#ED6F2C] px-6 py-3 rounded-[30px] text-lg font-semibold">
+                    CANCELLATION
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript for Modal Opening and Closing -->
+    <script>
+        function openModal(requestName, employeeName, employeeEmail, requestDesc, details, startDate, endDate, rewardSuggestion) {
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modal-title').textContent = requestName;
+            document.getElementById('employee-name').textContent = employeeName;
+            document.getElementById('employee-email').textContent = employeeEmail;
+            document.getElementById('request-name').textContent = requestDesc;
+            document.getElementById('request-details').textContent = details;
+            document.getElementById('start-date').textContent = startDate;
+            document.getElementById('end-date').textContent = endDate;
+            document.getElementById('reward-suggestion').textContent = rewardSuggestion;
+        }
+    
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
+    
+    
+ 
 </body>
 </html>
