@@ -115,8 +115,7 @@
         });
     </script>
     
-    <section class="p-6 mt-[120px]">
-        <!-- Title and Dropdown -->
+    <section class="p-6 mt-[120px] mb-">
         <div class="mb-6">
             <h2 class="text-lg font-bold text-[#263D5F]">Select Year</h2>
             <div class="mt-2">
@@ -129,13 +128,74 @@
                 </select>
             </div>
         </div>
+
+        <div class="mt-6 p-4 bg-[#FDF1EA] rounded-[20px] mb-[100px]">
+            <!-- Task Title and Checkbox -->
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <input type="checkbox" id="task-checkbox" class="w-6 h-6 rounded-lg" disabled>
+                    <span class="text-[#263D5F] text-lg ml-4">Update Website Content</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#263D5F" class="cursor-pointer" id="toggle-task-details">
+                    <path d="M12 16l-4-4h8z"/>
+                </svg>
+            </div>
         
-        <!-- Submit Button Section -->
+            <!-- Task Details (Initially Hidden) -->
+            <div id="task-details" class="mt-6 hidden">
+                <!-- Task Description -->
+                <div class="mb-4">
+                    <label class="block text-lg font-semibold text-[#263D5F] mb-2">Task Description</label>
+                    <p class="text-[#263D5F] text-sm">This task involves updating the website content to ensure it's aligned with the latest brand guidelines and product offerings.</p>
+                </div>
+        
+                <!-- Progress -->
+                <div class="mb-4">
+                    <label class="block text-lg font-semibold text-[#263D5F] mb-2">Progress</label>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[#263D5F] text-sm">50%</span>
+                        <progress value="50" max="100" class="w-full h-2 bg-gray-200 rounded-lg"></progress>
+                    </div>
+                </div>
+        
+                <!-- Method -->
+                <div class="mb-4">
+                    <label class="block text-lg font-semibold text-[#263D5F] mb-2">Method</label>
+                    <p class="text-[#263D5F] text-sm">Content will be updated based on the SEO guidelines and a content audit of the current website.</p>
+                </div>
+        
+                <!-- Start and End Dates -->
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div class="mb-4">
+                        <label class="block text-lg font-semibold text-[#263D5F] mb-2">Start Date</label>
+                        <p class="text-[#263D5F] text-sm">2024-06-01</p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-lg font-semibold text-[#263D5F] mb-2">End Date</label>
+                        <p class="text-[#263D5F] text-sm">2024-06-30</p>
+                    </div>
+                </div>
+        
+                <!-- Priority -->
+                <div class="mb-4">
+                    <label class="block text-lg font-semibold text-[#263D5F] mb-2">Priority</label>
+                    <p class="text-[#263D5F] text-sm">High</p>
+                </div>
+            </div>
+        </div>
+
         <div class="fixed bottom-6 left-0 w-full p-6">
             <button type="submit" class="bg-[#ED6F2C] text-white py-3 px-6 rounded-full text-lg font-semibold w-full">ADD YEARLY TARGET</button>
         </div>
     </section>
     
+    <script>
+        // Toggle the visibility of task details when the down arrow is clicked
+        document.getElementById('toggle-task-details').addEventListener('click', function() {
+            const taskDetails = document.getElementById('task-details');
+            taskDetails.classList.toggle('hidden'); // Toggle the "hidden" class
+        });
+    </script>
     
 </body>
 </html>
