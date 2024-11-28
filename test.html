@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Request Modal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -15,49 +15,77 @@
 <body class="bg-white h-screen flex flex-col">
 
     <!-- Button to open modal (for demonstration) -->
-    <button onclick="openModal()" class="bg-[#ED6F2C] text-white px-6 py-3 rounded-full mt-8 mx-auto">Open Modal</button>
+    <button onclick="openModal()" class="bg-[#ED6F2C] text-white px-6 py-3 rounded-full mt-8 mx-auto">Open Request Modal</button>
 
+    <!-- Modal -->
     <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-[30px] p-6 w-[90%] max-w-md relative">
+        <div class="bg-white rounded-[30px] p-6 w-[90%] max-w-lg relative">
             <button class="absolute top-4 right-4 bg-red-600 rounded-full p-2 flex items-center justify-center" onclick="closeModal()">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
                     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
                 </svg>
             </button>
-            <div class="text-center mb-6">
-                <img id="modal-img" src="assets/pfp-1.jpg" alt="" class="w-32 h-32 rounded-full mx-auto mb-4">
-                <h3 id="modal-title" class="text-2xl font-bold text-[#263D5F] mb-2">UMAIRAH</h3>
-                <p id="modal-desc" class="text-gray-700 text-sm mb-4">Frontend Developer in Information Technology Department</p>
+            <h2 class="text-center text-xl font-bold text-[#263D5F] mb-8">REQUEST NAME</h2>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-[#263D5F]">Employee Name:</h3>
+                    <p class="text-gray-700 text-sm">Alyssa Umairah</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-[#263D5F]">Employee Email:</h3>
+                    <p class="text-gray-700 text-sm">alyssa@gmail.com</p>
+                </div>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="flex items-center space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
-                        <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/>
-                    </svg>
-                    <p class="text-gray-700 text-sm">email@example.com</p>
+            <hr class="my-4 border-[#263D5F]">
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold text-[#263D5F]">Request:</h3>
+                <p class="text-gray-700 text-sm">Working from home</p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold text-[#263D5F]">Details:</h3>
+                <p class="text-gray-700 text-sm">Working from home from Monday to Friday</p>
+            </div>
+            <hr class="my-4 border-[#263D5F]">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-[#263D5F]">Start Date:</h3>
+                    <p class="text-gray-700 text-sm">01/01/2024</p>
                 </div>
-                <div class="flex items-center space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#263D5F">
-                        <path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/>
-                    </svg>
-                    <p class="text-gray-700 text-sm">+1 (234) 567-890</p>
+                <div>
+                    <h3 class="text-lg font-semibold text-[#263D5F]">End Date:</h3>
+                    <p class="text-gray-700 text-sm">01/31/2024</p>
                 </div>
+            </div>
+            <hr class="my-4 border-[#263D5F]">
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold text-[#263D5F]">Reward Suggestion:</h3>
+                <p class="text-gray-700 text-sm">Employee has shown excellent performance.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-[#263D5F]">Status:</h3>
+                </div>
+                <div class="flex items-center justify-end">
+                    <span class="bg-green-500 text-white py-1 px-4 rounded-full mr-4 w-2/4 text-center">Approve</span>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="w-full bg-white text-[#ED6F2C] border-2 border-[#ED6F2C] px-6 py-3 rounded-[30px] text-lg font-semibold">
+                    Cancel Request
+                </button>
             </div>
         </div>
     </div>
-</section>
 
-<!-- JavaScript for modal opening and closing -->
-<script>
-    function openModal() {
-        document.getElementById('modal').classList.remove('hidden');
-    }
+    <script>
+        function openModal() {
+            document.getElementById('modal').classList.remove('hidden');
+        }
 
-    function closeModal() {
-        document.getElementById('modal').classList.add('hidden');
-    }
-</script>
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
 
 </body>
 </html>
