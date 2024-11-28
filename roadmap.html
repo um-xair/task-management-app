@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Timeline Heading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .circle {
+            padding: 16px 20px;
+            border-radius: 30%;
+            background-color: red;
+            color: #fff;
+            max-height: 50px;
+            z-index: 2;
+            position: absolute;
+            transition: transform 1s ease-in-out;
+        }
+
+        .circle.green {
+            background-color: #a3e635;  /* Tailwind's bg-green-100 equivalent */
+        }
+
+        p {
+            color: #88818b;
+        }
+
+        h2 {
+            color: #6f45a7;
+            font-weight: bold;
+        }
+
+        .container {
+            position: relative;
+            height: 500px; /* Set a fixed height for better layout */
+        }
+
+        .connecting-lines.row .col-2 {
+            align-self: stretch;
+        }
+
+        .connecting-lines.row .col-2::after {
+            content: "";
+            position: absolute;
+            border-left: 3px solid #6f45a7;
+            z-index: 1;
+        }
+
+        .connecting-lines.row .col-2.bottom::after {
+            height: 50%;
+            left: 50%;
+            top: 50%;
+        }
+
+        .connecting-lines.row .col-2.full::after {
+            height: 100%;
+            left: calc(50% - 3px);
+        }
+
+        .connecting-lines.row .col-2.top::after {
+            height: 50%;
+            left: 50%;
+            top: 0;
+        }
+
+        .timeline div {
+            padding: 0;
+            height: 40px;
+        }
+
+        .timeline hr {
+            border-top: 3px solid #6f45a7;
+            margin: 0;
+            top: 17px;
+            position: relative;
+        }
+
+        .timeline .col-2 {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .timeline .corner {
+            border: 3px solid #6f45a7;
+            width: 100%;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .timeline .top-right {
+            left: 50%;
+            top: -50%;
+        }
+
+        .timeline .left-bottom {
+            left: -50%;
+            top: calc(50% - 3px);
+        }
+
+        .timeline .top-left {
+            left: -50%;
+            top: -50%;
+        }
+
+        .timeline .right-bottom {
+            left: 50%;
+            top: calc(50% - 3px);
+        }
+
+        /* New class to animate the circle to the next position */
+        @keyframes moveCircle {
+            0% {
+                transform: translateY(0); /* Initial position */
+            }
+            50% {
+                transform: translateY(-50px); /* Move up */
+            }
+            75% {
+                transform: translateY(-50px) translateX(640px); /* Move up then to the right */
+            }
+            90% {
+                transform: translateY(-50px) translateX(640px); /* Pause at the right */
+            }
+            100% {
+                transform: translateY(-110px) translateX(640px); /* Move up after the pause */
+            }
+        }
+
+        .move-to-next {
+            animation: moveCircle 5s ease-in-out forwards; /* Adjust the timing to suit your needs */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <div class="container">
+          <h2 class="pb-5 pt-5 text-center mb-5 display-5">Vertical Timeline Heading</h2>
+
+          <!-- First Content Section -->
+          <div class="row align-items-center justify-content-end connecting-lines d-flex">
+            <div class="col-6 text-right">
+              <h4>Second Step</h4>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, alias.</p>
+            </div>
+            <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+              <div class="circle font-weight-bold" id="circle"><i class="fa fa-check"></i></div>
+            </div>
+          </div>
+
+          <!-- Path Line -->
+          <div class="row timeline">
+            <div class="col-2">
+              <div class="corner right-bottom"></div>
+            </div>
+            <div class="col-8">
+              <hr/>
+            </div>
+            <div class="col-2">
+              <div class="corner top-left"></div>
+            </div>
+          </div>
+
+          <!-- Second Content Section (Circle with bg-green-100) -->
+          <div class="row align-items-center connecting-lines d-flex">
+            <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
+              <div class="circle font-weight-bold green" id="greenCircle"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="col-6">
+              <h4>First Step</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, delectus?</p>
+            </div>
+          </div>
+          
+          <!-- Button to trigger movement -->
+          <button class="btn btn-primary mt-5" id="moveButton">Move to Next Step</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle button click and move the circle
+        document.getElementById('moveButton').addEventListener('click', function() {
+            var circle = document.getElementById('circle'); // Select the red circle
+            var greenCircle = document.getElementById('greenCircle'); // Select the green circle
+            
+            // Start animation for the green circle
+            greenCircle.classList.add('move-to-next'); // Add the move class to trigger animation
+            
+            // Once the animation is done, hide the red circle and make the green circle appear
+            greenCircle.addEventListener('animationend', function() {
+                circle.style.display = 'none';  // Hide the red circle
+                greenCircle.style.display = 'block'; // Show the green circle
+            });
+        });
+    </script>
+
+</body>
+</html>
