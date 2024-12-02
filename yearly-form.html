@@ -116,8 +116,7 @@
     </script>
     
     <section class="p-6 mt-[120px]">
-        <!-- Form Title and Dropdown -->
-        <form action="#" method="POST" class="px-2 mb-[100px]">
+        <form action="" method="POST" class="px-2 mb-[100px]">
             <div class="mb-6">
                 <div class="mt-2">
                     <label for="year" class="block text-lg font-semibold text-[#263D5F] mb-2">Year</label>
@@ -127,45 +126,41 @@
                 </div>
             </div>
             
-            <!-- Target and Target Description -->
             <div class="mb-6">
-                <label for="target" class="block text-lg font-semibold text-[#263D5F] mb-2">Target</label>
+                <label for="target" class="block text-lg font-semibold text-[#263D5F] mb-2">Target*</label>
                 <input type="text" id="target" name="target" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" placeholder="Enter target" required>
             </div>
     
             <div class="mb-6">
-                <label for="target-desc" class="block text-lg font-semibold text-[#263D5F] mb-2">Target Description</label>
+                <label for="target-desc" class="block text-lg font-semibold text-[#263D5F] mb-2">Target Description*</label>
                 <textarea id="target-desc" name="target-desc" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" placeholder="Enter target description" required></textarea>
             </div>
     
-            <!-- Progress Bar -->
             <div class="mb-6">
-                <label for="progress" class="block text-lg font-semibold text-[#263D5F] mb-2">Progress</label>
-                <input type="range" id="progress" name="progress" min="0" max="100" value="50" class="w-full h-2 bg-[#ED6F2C] rounded-lg" />
-                <p class="text-center text-lg font-semibold text-[#263D5F]">Progress: <span id="progress-value">50</span>%</p>
+                <label for="progress" class="block text-lg font-semibold text-[#263D5F] mb-2">Progress*</label>
+                <div class="w-full bg-gray-100 rounded-3xl h-8">
+                    <div id="progress-bar" class="bg-[#ED6F2C] h-8 rounded-3xl text-xs text-white text-center flex items-center justify-center" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+                </div>
             </div>
     
-            <!-- Method -->
             <div class="mb-6">
-                <label for="method" class="block text-lg font-semibold text-[#263D5F] mb-2">Method</label>
+                <label for="method" class="block text-lg font-semibold text-[#263D5F] mb-2">Method*</label>
                 <textarea id="method" name="method" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" placeholder="Enter method" required></textarea>
             </div>
     
-            <!-- Start and End Dates (2 Columns) -->
             <div class="grid grid-cols-2 gap-4 mb-6">
                 <div>
-                    <label for="start-date" class="block text-lg font-semibold text-[#263D5F] mb-2">Start Date</label>
+                    <label for="start-date" class="block text-lg font-semibold text-[#263D5F] mb-2">Start Date*</label>
                     <input type="date" id="start-date" name="start-date" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" required>
                 </div>
                 <div>
-                    <label for="end-date" class="block text-lg font-semibold text-[#263D5F] mb-2">End Date</label>
+                    <label for="end-date" class="block text-lg font-semibold text-[#263D5F] mb-2">End Date*</label>
                     <input type="date" id="end-date" name="end-date" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" required>
                 </div>
             </div>
     
-            <!-- Priority -->
             <div class="mb-6">
-                <label for="priority" class="block text-lg font-semibold text-[#263D5F] mb-2">Priority</label>
+                <label for="priority" class="block text-lg font-semibold text-[#263D5F] mb-2">Priority*</label>
                 <select id="priority" name="priority" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" required>
                     <option value="high">High</option>
                     <option value="medium">Medium</option>
@@ -173,19 +168,22 @@
                 </select>
             </div>
     
-            <!-- Submit Button Section -->
             <div class="fixed bottom-6 left-0 w-full p-6">
                 <button type="submit" class="bg-[#ED6F2C] text-white py-3 px-6 rounded-full text-lg font-semibold w-full">ADD YEARLY TARGET</button>
             </div>
+            
         </form>
-    </section>
+    </section>  
     
     <script>
-        // Update progress bar value display
-        const progressBar = document.getElementById('progress');
-        const progressValue = document.getElementById('progress-value');
-        progressBar.addEventListener('input', function () {
-            progressValue.textContent = progressBar.value;
+        const progressInput = document.getElementById('progress');
+        const progressBar = document.getElementById('progress-bar');
+    
+        progressInput.addEventListener('input', function () {
+            let progress = progressInput.value;
+            progressBar.style.width = progress + '%';
+            progressBar.innerText = progress + '%';
+            progressBar.setAttribute('aria-valuenow', progress);
         });
     </script>
     
