@@ -21,47 +21,77 @@
         </button>
 
         <!-- Modal -->
-        <div id="modal" class=" fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50">
-            <div class="bg-white p-8 rounded-lg w-11/12 md:w-1/3">
-                <h2 class="text-xl font-semibold text-[#263D5F] mb-4">Monthly Summary</h2>
-                
-                <!-- Form inside the modal -->
-                <form action="#" method="POST">
-                    <div class="mb-4">
-                        <label for="completion-status" class="block text-lg font-semibold text-[#263D5F] mb-2">Completion Status</label>
-                        <select id="completion-status" name="completion-status" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" required>
-                            <option value="completed">Completed</option>
-                            <option value="uncompleted">Uncompleted</option>
-                        </select>
+        <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-[30px] p-6 w-[90%] max-w-md relative">
+                <!-- Close Button -->
+                <button class="absolute top-4 right-4 bg-red-600 rounded-full p-2 flex items-center justify-center" id="close-modal-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg>
+                </button>
+        
+                <!-- Modal Title -->
+                <div class="text-center mb-4">
+                    <h3 id="modal-title" class="text-xl font-bold text-[#263D5F] mb-2">Attitude</h3>
+                </div>
+        
+                <!-- Checkbox Options -->
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <!-- Left Column (5 checkboxes) -->
+                    <div>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            Devotion
+                        </label>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            Love
+                        </label>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            Positive
+                        </label>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            Gratitude
+                        </label>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            No Excuse
+                        </label>
                     </div>
-
-                    <div class="mb-4">
-                        <label for="reason-obstacles" class="block text-lg font-semibold text-[#263D5F] mb-2">Reason & Obstacles for Uncompleted</label>
-                        <textarea id="reason-obstacles" name="reason-obstacles" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" placeholder="Enter reason and obstacles" required></textarea>
+        
+                    <!-- Right Column (5 checkboxes) -->
+                    <div>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            Confidence
+                        </label>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            Completion
+                        </label>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            Keep Promise
+                        </label>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            Efficient
+                        </label>
+                        <label class="block flex items-center mb-2">
+                            <input type="checkbox" class="mr-2" />
+                            Serious
+                        </label>
                     </div>
-
-                    <div class="mb-4">
-                        <label for="strategies-methods" class="block text-lg font-semibold text-[#263D5F] mb-2">Strategies & Methods to Overcome</label>
-                        <textarea id="strategies-methods" name="strategies-methods" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" placeholder="Enter strategies and methods" required></textarea>
-                    </div>
-
-                    <div class="mb-4">
-                        <label for="additional-remark" class="block text-lg font-semibold text-[#263D5F] mb-2">Additional Remark of the Month</label>
-                        <textarea id="additional-remark" name="additional-remark" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" placeholder="Enter additional remarks" required></textarea>
-                    </div>
-
-                    <div class="mb-4">
-                        <label for="innovations-achievements" class="block text-lg font-semibold text-[#263D5F] mb-2">Innovations & Achievements</label>
-                        <textarea id="innovations-achievements" name="innovations-achievements" class="w-full px-4 py-2 border border-[#263D5F] rounded-lg" placeholder="Enter innovations and achievements" required></textarea>
-                    </div>
-
-                    <div class="flex justify-end">
-                        <button type="button" onclick="document.getElementById('modal').classList.add('hidden')" class="bg-gray-500 text-white py-2 px-6 rounded-lg mr-4">Cancel</button>
-                        <button type="submit" class="bg-[#ED6F2C] text-white py-2 px-6 rounded-lg">Submit</button>
-                    </div>
-                </form>
+                </div>
+        
+                <!-- Save Button -->
+                <button id="save-btn" class="bg-[#ED6F2C] text-white py-3 px-6 rounded-full text-md font-semibold w-full mt-6">SAVE</button>
             </div>
         </div>
+        
+        
     </section>
     
 </body>
