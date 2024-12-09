@@ -1,98 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-white h-screen flex flex-col">
+<html>
+<body style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f0f0f0;">
 
-    <section class="p-6 mt-[120px]">
-        <!-- Button to open modal -->
-        <button onclick="document.getElementById('modal').classList.remove('hidden')" class="bg-[#ED6F2C] text-white py-3 px-6 rounded-full text-lg font-semibold w-full">
-            Open Monthly Summary Modal
-        </button>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Road -->
+  <path 
+    d="M50 150 
+       L400 150 
+       C600 150, 700 400, 420 440
+       L100 440
+       C-300 440, -400 700, 100 600" 
+    fill="none" 
+    stroke="#555" 
+    stroke-width="20" />
+  
+  <!-- Road Center Line -->
+  <path 
+    d="M50 150 
+       L400 150 
+       C600 150, 700 400, 420 440
+       L100 440
+       C-300 440, -400 700, 100 600" 
+    fill="none" 
+    stroke="#fff" 
+    stroke-dasharray="10,10" 
+    stroke-width="2" />
+</svg>
 
-        <!-- Modal -->
-        <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div class="bg-white rounded-[30px] p-6 w-[90%] max-w-md relative">
-                <!-- Close Button -->
-                <button class="absolute top-4 right-4 bg-red-600 rounded-full p-2 flex items-center justify-center" id="close-modal-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
-                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-                    </svg>
-                </button>
-        
-                <!-- Modal Title -->
-                <div class="text-center mb-4">
-                    <h3 id="modal-title" class="text-xl font-bold text-[#263D5F] mb-2">Attitude</h3>
-                </div>
-        
-                <!-- Checkbox Options -->
-                <div class="grid grid-cols-2 gap-4 mt-4">
-                    <!-- Left Column (5 checkboxes) -->
-                    <div>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            Devotion
-                        </label>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            Love
-                        </label>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            Positive
-                        </label>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            Gratitude
-                        </label>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            No Excuse
-                        </label>
-                    </div>
-        
-                    <!-- Right Column (5 checkboxes) -->
-                    <div>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            Confidence
-                        </label>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            Completion
-                        </label>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            Keep Promise
-                        </label>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            Efficient
-                        </label>
-                        <label class="block flex items-center mb-2">
-                            <input type="checkbox" class="mr-2" />
-                            Serious
-                        </label>
-                    </div>
-                </div>
-        
-                <!-- Save Button -->
-                <button id="save-btn" class="bg-[#ED6F2C] text-white py-3 px-6 rounded-full text-md font-semibold w-full mt-6">SAVE</button>
-            </div>
-        </div>
-        
-        
-    </section>
-    
 </body>
 </html>
