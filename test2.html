@@ -1,31 +1,76 @@
 <!DOCTYPE html>
-<html>
-<body style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f0f0f0;">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straight Road with Harpin Turn (SVG)</title>
+    <style>
+        /* Ensure the body takes up the entire viewport */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 300%;
+            width: 100%;
+            background-color: #f3f3f3;
+; /* Optional: prevents scrolling */
+        }
 
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-  <!-- Road -->
-  <path 
-    d="M50 150 
-       L400 150 
-       C600 150, 700 400, 420 440
-       L100 440
-       C-300 440, -400 700, 100 600" 
-    fill="none" 
-    stroke="#555" 
-    stroke-width="20" />
-  
-  <!-- Road Center Line -->
-  <path 
-    d="M50 150 
-       L400 150 
-       C600 150, 700 400, 420 440
-       L100 440
-       C-300 440, -400 700, 100 600" 
-    fill="none" 
-    stroke="#fff" 
-    stroke-dasharray="10,10" 
-    stroke-width="2" />
-</svg>
+        /* Ensure the SVG takes the full width and height of the viewport */
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <!-- Road -->
+        <rect x="0" y="100" width="600" height="60" fill="#2c2c2c" />
+        
+        <!-- Dashed Line -->
+        <line x1="0" y1="130" x2="600" y2="130" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
+        
+        <!-- Curved Road shifted down -->
+        <path d="M 600 130 Q 750 130, 750 230 Q 750 330, 600 330" fill="none" stroke="#2c2c2c" stroke-width="60" />
+        
+        <!-- Curved Dashed Line shifted down -->
+        <path d="M 600 130 Q 750 130, 750 230 Q 750 330, 600 330" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
+        
+        <!-- Shorter Straight Line after Curve -->
+        <line x1="600" y1="330" x2="200" y2="330" stroke="#2c2c2c" stroke-width="60" />
+        
+        <!-- Shorter Straight Dashed Line after Curve -->
+        <line x1="600" y1="330" x2="200" y2="330" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
+        
+        <!-- "C"-Shaped Curve Road Moved Slightly Up -->
+        <path d="M 200 330 Q 50 330, 50 430 Q 50 530, 200 530" fill="none" stroke="#2c2c2c" stroke-width="60" />
+        
+        <!-- Curved Dashed Line shifted down -->
+        <path d="M 200 330 Q 50 330, 50 430 Q 50 530, 200 530" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
 
+        <!-- Short Line After the Curve -->
+        <line x1="200" y1="530" x2="610" y2="530" stroke="#2c2c2c" stroke-width="60" />
+        
+        <!-- Short Dashed Line After the Curve -->
+        <line x1="200" y1="530" x2="610" y2="530" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
+        
+        <!-- Additional Curved Path aligned with the previous X line -->
+        <path d="M 600 530 Q 750 530, 750 630 Q 750 730, 600 730" fill="none" stroke="#2c2c2c" stroke-width="60" />
+        
+        <!-- Dashed Line for the Additional Curved Path aligned with the previous X line -->
+        <path d="M 600 530 Q 750 530, 750 630 Q 750 730, 600 730" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
+    
+        <!-- Straight Line from Right to Left -->
+        <line x1="600" y1="730" x2="200" y2="730" stroke="#2c2c2c" stroke-width="60" />
+        
+        <!-- Dashed Line for the Straight Line from Right to Left -->
+        <line x1="600" y1="730" x2="200" y2="730" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
+        
+        <!-- Additional Curved Path at the end -->
+        <path d="M 200 730 Q 50 730, 50 830 Q 50 930, 200 930" fill="none" stroke="#2c2c2c" stroke-width="60" />
+        
+        <!-- Curved Dashed Line shifted down at the end -->
+        <path d="M 200 730 Q 50 730, 50 830 Q 50 930, 200 930" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
+    </svg>
 </body>
 </html>
