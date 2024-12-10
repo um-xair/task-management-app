@@ -12,19 +12,20 @@
             height: 300%;
             width: 100%;
             background-color: #f3f3f3;
-            /* Optional: prevents scrolling */
         }
 
         /* Ensure the SVG takes the full width and height of the viewport */
         svg {
             width: 100%;
             height: 100%;
+            position: relative;
         }
 
         /* Car animation */
         .car {
-            animation: moveCar 5s linear infinite;
-            z-index:999;
+            animation: moveCar 2s linear infinite;
+            position: absolute;
+            z-index: 10; /* Car is on top */
         }
 
         /* Keyframes to animate the car along the road */
@@ -33,22 +34,19 @@
                 transform: translateX(0); /* Start at the left side */
             }
             100% {
-                transform: translateX(550px); /* End at the right side (600px - 50px car width) */
+                transform: translateX(500px); /* End at the right side (600px - 50px car width) */
             }
         }
     </style>
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg">
-        <!-- Road -->
+        <!-- Road (All elements below the car) -->
         <rect x="0" y="100" width="600" height="60" fill="#2c2c2c" />
         
         <!-- Dashed Line -->
         <line x1="0" y1="130" x2="600" y2="130" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
         
-        <!-- Car Image on the Road with animation class -->
-        <image x="50" y="80" width="100" height="100" href="https://carfax-vrs.imgix.net/2024-Tesla-Cybertruck-EX-400927288-30.png" class="car" />
-
         <!-- Curved Road shifted down -->
         <path d="M 600 130 Q 750 130, 750 230 Q 750 330, 600 330" fill="none" stroke="#2c2c2c" stroke-width="60" />
         
@@ -72,6 +70,9 @@
         
         <!-- Short Dashed Line After the Curve -->
         <line x1="200" y1="530" x2="610" y2="530" stroke="#fff" stroke-width="6" stroke-dasharray="20,20" />
+
+        <!-- Car Image on the Road with animation class, placed last to appear on top -->
+        <image x="50" y="80" width="100" height="100" href="https://carfax-vrs.imgix.net/2024-Tesla-Cybertruck-EX-400927288-30.png" class="car" />
     </svg>
 </body>
 </html>
