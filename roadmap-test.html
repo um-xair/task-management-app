@@ -23,20 +23,36 @@
 
         /* Car animation */
         .car {
-            animation: moveCar 2s linear infinite;
+            animation: moveCar 1s linear forwards; /* Animation will stop at the end */
             position: absolute;
             z-index: 10; /* Car is on top */
         }
 
         /* Keyframes to animate the car along the road */
         @keyframes moveCar {
-            0% {
-                transform: translateX(0); /* Start at the left side */
-            }
-            100% {
-                transform: translateX(500px); /* End at the right side (600px - 50px car width) */
-            }
-        }
+    0% {
+        transform: translateX(0); /* Start at the left side */
+    }
+    80% {
+        transform: translateX(70%); /* Almost at the first stop */
+    }
+    90% {
+        transform: translateX(80%) rotate(20deg); /* First turn */
+    }
+    95% {
+        transform: translateX(90%) translateY(50px) rotate(35deg); /* Move slightly down and rotate */
+    }
+    100% {
+        transform: translateX(105%) translateY(150px) rotate(90deg); /* Final position, move further down but no rotation */
+    }
+} 
+
+
+
+
+
+
+
     </style>
 </head>
 <body>
