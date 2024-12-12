@@ -23,7 +23,7 @@
 
         /* Car animation */
         .car {
-            animation: moveCar 1s linear forwards; /* Animation will stop at the end */
+            animation: moveCar 3s linear forwards; /* Animation will stop at the end */
             position: absolute;
             z-index: 10; /* Car is on top */
         }
@@ -40,12 +40,28 @@
         transform: translateX(80%) rotate(20deg); /* First turn */
     }
     95% {
-        transform: translateX(90%) translateY(50px) rotate(35deg); /* Move slightly down and rotate */
+        transform: translateX(90%) translateY(1%) rotate(35deg); /* Move slightly down and rotate */
     }
     100% {
-        transform: translateX(105%) translateY(150px) rotate(90deg); /* Final position, move further down but no rotation */
+        transform: translateX(105%) translateY(2%) rotate(90deg); /* Final position, move further down and rotate */
     }
-} 
+    105% {
+        transform: translateX(102%) translateY(3%) rotate(100deg); /* Move left slightly and rotate */
+    }
+    110% {
+        transform: translateX(100%) translateY(5%) rotate(120deg); /* Move more left and rotate more */
+    }
+    115% {
+        transform: translateX(100%) translateY(10%) rotate(140deg); /* Continue down */
+    }
+    120% {
+        transform: translateX(100%) translateY(15%) rotate(160deg); /* Continue down */
+    }
+    125% {
+        transform: translateX(100%) translateY(20%) rotate(180deg); /* Move further down */
+    }
+}
+
 
 
 
